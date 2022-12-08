@@ -6,7 +6,7 @@ description         : >-
                       and never broke production.
 baseurl             : ""                     # Change to empty quotes if you are hosting your site at <your-username>.github.io directly
 repository          : ai-dorable/ai-dorable.github.io     # Change to <your-username>/<your-username>.github.io (or remove it if you don't need remote projects)
-remote_theme        : ai-dorable/ai-dorable.github.io
+remote_theme        : YoussefRaafatNasry/portfolYOU
 open_new_tab        : false                             # Opens external URLs in new tab (works for posts, projects and navbar only)
 
 
@@ -26,7 +26,7 @@ nav_exclude:                                            # The following paths ar
 ### Author Info ###
 author:
   name              : Doyeon Yoon
-  image             : https://i.imgur.com/uyDNQnn.jpg
+  image             : https://user-images.githubusercontent.com/120036648/206411545-4e7eea0d-06e9-43e8-a6b7-638a03855365.png
 #  behance           : your_username
 # dribbble          : your_username
   email             : ydy89899@gmail.com
