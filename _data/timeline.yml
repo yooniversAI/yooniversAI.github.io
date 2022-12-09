@@ -1,17 +1,39 @@
-- title: Student, Harvard CS
-  from: 2014
-  to: 2018
-  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-               sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-               Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-               nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-               reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+- title: Machine Learning Engineer, Hbee, Pohang
+  from: Nov, 2018
+  to: Dec, 2018
+  description: Worked on various machine learning related tasks, including but not limited to:<br />
+    • Anomaly detection in semiconductor process<br />
+    • Stacked Auto-Encoder with short time series<br />
+    • Semi-supervised GAN with image data
 
-- title: Software Engineer, Google, UK
-  from: 2018
-  to: present
-  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-               sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-               Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-               nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-               reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+- title: Intern, POSTECH Institute of Artificial Intelligence, Pohang
+  from: Nov, 2018
+  to: Dec, 2018
+  description: Worked on various machine learning related tasks, including but not limited to:<br />
+    • Medical image segmentation with 3D U-net(<a href="https://github.com/ydy8989/Cardiac_Segmentation">Repository</a>)<br />
+    • Semi-supervised learning
+
+- title: Education, POSTECH Institute of Artificial Intelligence, Pohang
+  from: Sep, 2018
+  to: Oct, 2018
+  description: Participated as a team leader on a machine learning project team, 
+    developing machine learning model, called a Senticle, 
+    which is a stock price prediction model using news data.<br />
+    • NLP model using the ensemble of 1DCNN and LSTM(<a href="https://github.com/ydy8989/senticle-proj">Repository</a>)<br />
+    • Model description using LIME
+
+- title: M.S. degrees, Kwangwoon, Department of Mathematics
+  from: Mar, 2013
+  to: Feb, 2015
+  description:
+    • specific major - Combinatorics <br />
+    • research field - Antibandwidth of Graph Theory <br />
+    • graduation thesis - <a href="http://www.riss.kr/search/detail/DetailView.do?
+      p_mat_type=be54d9b8bc7cdb09&control_no=1a9153daf327f969ffe0bdc3ef48d419">
+      The anti-bandwidth of triangular grid graph</a>
+
+- title: B.S. degrees, Kwangwoon, Department of Mathematics
+  from: Mar, 2015
+  to: Feb, 2017
+  description:
+    Transferred to Kwangwoon University from the Department of Mechanical System Design at Seoul National University of Science and Technology.

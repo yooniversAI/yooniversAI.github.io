@@ -8,11 +8,14 @@ weight: 3
 # **About Me**
 
 Hi I am **{{ site.author.name }}** :wave:,<br>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+who likes math and is studying artificial intelligence. I mainly studied combinatorics in math and anti-bandwidth in graph structures.
+I’ve been interested in a variety of fields, including finance, healthcare, and I can understand the key considerations in those fields.
+Recently, I am interested in NLP, graph domain, and recommendation systems. I am studying with the next goal of achieving results through the combination of graph theory and deep learning. Thank you! 😍
 
 <div class="row">
-{% include about/skills.html title="Programming Skills" source=site.data.programming-skills %}
-{% include about/skills.html title="Other Skills" source=site.data.other-skills %}
+{% include about/skills.html title="Skills" source=site.data.programming-skills %}
+{% include about/skills.html title="Engineering" source=site.data.ops %}
+{% include about/skills.html title="Interests" source=site.data.other-skills %}
 </div>
 
 <div class="row">

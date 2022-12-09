@@ -1,0 +1,13 @@
+- name: Linux
+  percentage: 85
+  color: light
+
+- name: Docker
+  percentage: 80
+  color: success
+
+- name: BentoML
+  percentage: 70
+  color: secondary
+
+

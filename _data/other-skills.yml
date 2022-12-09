@@ -1,7 +1,7 @@
-- name: Adobe Photoshop
-  percentage: 95
+- name: NLP
+  percentage: 90
   color: info
 
-- name: Adobe Illustrator
-  percentage: 90
-  color: success
+- name: RecSys
+  percentage: 75
+  color: warning
