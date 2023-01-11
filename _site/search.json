@@ -1,6 +1,14 @@
 [
   
     {
+      "title"    : "Neural Machine Translation by Jointly Learning to Align and Translate",
+      "category" : "",
+      "tags"     : "Attention, review",
+      "url"      : "/blog/attention",
+      "date"     : "2023-01-10 00:00:00 +0900"
+    } ,
+  
+    {
       "title"    : "Transformer - Attention is all you need",
       "category" : "",
       "tags"     : "nlp, transformer, machine translation",
@@ -41,9 +49,9 @@
     } ,
   
     {
-      "title"    : "Transformer - Attention is all you need",
+      "title"    : "Neural Machine Translation by Jointly Learning to Align and Translate",
       "category" : "",
-      "tags"     : "nlp, transformer, machine translation",
+      "tags"     : "review, transformer",
       "url"      : "/blog/transformers",
       "date"     : "2022-12-08 00:00:00 +0900"
     } ,

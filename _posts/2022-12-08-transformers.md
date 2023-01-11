@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Transformer - Attention is all you need 
+title: Neural Machine Translation by Jointly Learning to Align and Translate
 subtitle: transformer, bidirectional RNN은 필요없다.
 style: border
 color: danger
-tags: [nlp, transformer, machine translation]
+tags: [review, transformer]
 description: 이번 포스팅은 최근 2년간의 NLP task에서 SOTA를 기록했던 모델들의 모태가 되는 Transformer(NIPS 2017)에 대한 논문을 리뷰하려 한다.
 ---
 
