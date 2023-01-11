@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Neural Machine Translation by Jointly Learning to Align and Translate
+title: Attention ◀️ Neural Machine Translation by Jointly Learning to Align and Translate
 style: border
 color: danger
 tags: [Attention, review]
