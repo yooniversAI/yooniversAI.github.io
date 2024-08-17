@@ -143,7 +143,7 @@ body { font-family: "Poppins", sans-serif; }
 .markdown-body a:not(.btn):not([class^="carousel-"]):not([class^="list-"]):not(.no-underline)::after { content: ""; display: block; height: 0.15em; margin-top: -0.15em; width: 0; background: #007bff; transition: width 0.35s; }
 .markdown-body a:not(.btn):not([class^="carousel-"]):not([class^="list-"]):not(.no-underline):hover::after { width: 100%; }
 .markdown-body pre { background: #f8f9fa; border: 1px solid #ddd; color: #343a40; font-family: monospace; font-size: 14px; line-height: 2em; margin-bottom: 1.6em; max-width: 100%; padding: 1em 1.5em; display: block; page-break-inside: avoid; overflow: auto; word-wrap: break-word; }
-.markdown-body code.highlighter-rouge { background-color: #f8f9fa; color: #e07777; border-radius: 3px; margin: 0; padding: 0.2em 0.65em; }
+.markdown-body code.highlighter-rouge { background-color: #f8f9fa; color: #e07777; border-radius: 3px; margin: 0; padding: 0.05em 0.4em; }
 .markdown-body blockquote { border-left: 0.25em solid #007bff; color: #6c757d; padding: 0 1em; }
 .markdown-body ul.task-list { list-style: none; padding-left: 24px; }
 .markdown-body input.task-list-item-checkbox { margin-right: 10px; vertical-align: middle; }
