@@ -17,67 +17,11 @@
     } ,
   
     {
-      "title"    : "Transformer2256 - Attention is all you need",
-      "category" : "",
-      "tags"     : "nlp, transformer, machine translation",
-      "url"      : "/blog/transformers2256",
-      "date"     : "2022-12-08 00:00:00 +0900"
-    } ,
-  
-    {
-      "title"    : "Transformer225 - Attention is all you need",
-      "category" : "",
-      "tags"     : "nlp, transformer, machine translation",
-      "url"      : "/blog/transformers225",
-      "date"     : "2022-12-08 00:00:00 +0900"
-    } ,
-  
-    {
-      "title"    : "Transformer223 - Attention is all you need",
-      "category" : "",
-      "tags"     : "nlp, transformer, machine translation",
-      "url"      : "/blog/transformers223",
-      "date"     : "2022-12-08 00:00:00 +0900"
-    } ,
-  
-    {
-      "title"    : "Transformer33 - Attention is all you need",
-      "category" : "",
-      "tags"     : "nlp, transformer, machine translation",
-      "url"      : "/blog/transformers22",
-      "date"     : "2022-12-08 00:00:00 +0900"
-    } ,
-  
-    {
-      "title"    : "Transformer2 - Attention is all you need",
-      "category" : "",
-      "tags"     : "nlp, transformer, machine translation",
-      "url"      : "/blog/transformers2",
-      "date"     : "2022-12-08 00:00:00 +0900"
-    } ,
-  
-    {
       "title"    : "Transformer ◀️ Attention is all you need",
       "category" : "",
       "tags"     : "transformer, review",
       "url"      : "/blog/transformers",
       "date"     : "2022-12-08 00:00:00 +0900"
-    } ,
-  
-    {
-      "title"    : "What is version control?",
-      "category" : "",
-      "tags"     : "Version Control",
-      "url"      : "/blog/trilloge",
-      "date"     : "2022-12-07 00:00:00 +0900"
-    } ,
-  
-    {
-      "title"    : "What is version control?",
-      "category" : "",
-      "tags"     : "Version Control",
-      "url"      : "/blog/trilloge2",
-      "date"     : "2022-12-04 00:00:00 +0900"
     } 
   
 ]

@@ -1,4 +1,4 @@
-- name: NLP
+- name: LLM
   percentage: 90
   color: info
 

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+
+<!--
+  portfolYOU Jekyll theme by Youssef Raafat
+  Free for personal and commercial use under the MIT license
+  https://github.com/YoussefRaafatNasry/portfolYOU
+-->
+
+<html lang="en" class="h-100">
+  
+<head>
+
+  
+  
+  
+
+  
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="SimCSE ◀️ Simple Contrastive learning of Sentence Embedding">
+  <meta property="og:description" content="이번 포스팅은 EMNLP2021에 발표된 contrastive learning을 적용한 sentence embedding 방법론을 소개하려 한다.">
+  <meta property="og:image" content="https://user-images.githubusercontent.com/120036648/206411545-4e7eea0d-06e9-43e8-a6b7-638a03855365.png">
+
+  <title>SimCSE ◀️ Simple Contrastive learning of Sentence Embedding</title>
+  <meta name="description" content="이번 포스팅은 EMNLP2021에 발표된 contrastive learning을 적용한 sentence embedding 방법론을 소개하려 한다.">
+
+  <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon.ico">
+
+  <!-- Theme style -->
+  <script src="/assets/js/theme.js"></script>
+
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.0/css/all.css">
+
+  <!-- Bootstrap CSS CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+
+  <!-- Animate CSS CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+</head>
+
+
+<body class="h-100 d-flex flex-column">
+
+  <main class="flex-shrink-0 container mt-5">
+    <nav class="navbar navbar-expand-lg navbar-themed">
+
+  <a class="navbar-brand" href="/"><h5><b>YooniverAI</b></h5></a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <i class="fas fa-1x fa-bars text-themed"></i>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav ml-auto"><a class="nav-item nav-link " href="/projects/">Projects</a>
+
+      <a class="nav-item nav-link active" href="/blog/">Blog</a>
+
+      <a class="nav-item nav-link " href="/about/">About</a>
+
+      
+
+      <span id="theme-toggler" class="nav-item nav-link" role="button" onclick="toggleTheme()"></span>
+    </div>
+  </div>
+
+</nav>
+    <div class="col-lg-10 mx-auto mt-5 markdown-body">
+  <h1><b>SimCSE ◀️ Simple Contrastive learning of Sentence Embedding</b></h1>
+
+<p class="post-metadata text-muted">
+  13 February 2023 -  
+  <b>3 mins read time</b>
+
+  <br>Tags: 
+    
+    <a class="text-decoration-none no-underline" href="/blog/tags#sentence-embedding">
+      <span class="tag badge badge-pill text-primary border border-primary">sentence embedding</span>
+    </a>
+    
+    <a class="text-decoration-none no-underline" href="/blog/tags#contrastive-learning">
+      <span class="tag badge badge-pill text-primary border border-primary">contrastive learning</span>
+    </a>
+    
+    <a class="text-decoration-none no-underline" href="/blog/tags#review">
+      <span class="tag badge badge-pill text-primary border border-primary">review</span>
+    </a>
+    </p>
+<article>
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+  </script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>  
+  <p>[TOC]</p>
+
+<h1 id="1-introduction">1. Introduction</h1>
+
+<p>SimCSE는 기존 vision 도메인에서 제시된 Contrastive learning 방법론인 SimCLR을 NLP 도메인으로 옮겨온 연구 결과라고 할 수 있다. RoBERTa와 SpanBERT의 저자로 알려진 Danqi Chen 교수의 SimCSE 논문에서는 아래 6가지 내용을 말하고 있다.</p>
+
+<ol>
+  <li>
+    <p>BERT나 RoBERTa 같은 pre-trained 언어모델에서 contrastive objective로 학습하는 것이 효과적일 수 있음을 보여주었다.</p>
+  </li>
+  <li>
+    <p>unsupervised와 supervised하게 sentence embedding이 가능한 simCSE 방법론을 제안하였다.</p>
+
+    <ul>
+      <li>
+        <p><code class="language-plaintext highlighter-rouge">unsupervised</code>한 방법으로는 dropout만으로 positive pair를 만들어 minimal한 data augmentation이 가능하도록 유도하며 representation collapse를 막는다는 것을 발견함</p>
+      </li>
+      <li>
+        <p><code class="language-plaintext highlighter-rouge">supervised</code>한 방법으로는 NLI 데이터 셋의 sentence pair label을 활용해 contrastive learning을 진행한다. 특히, hart negative pair로 contradiction label을 사용함으로써 상당한 개선을 확인함.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>semantical하게 생성된 positive pair와 전체 임베딩 공간의 <em><u>uniformity</u></em>와 <em><u>alignment</u></em>를 통해 학습된 임베딩의 품질을 측정한다. unsupervised한 학습에서의 dropout을 통한 positive pair 생성 방식이 이러한  representation의 표현성을 향상시킨다고 한다.</p>
+  </li>
+  <li>
+    <p>PLM의 word embedding이 고질적인 anisotropic한 성질을 갖는다는 것과 관련하여 constrastive learning이 문장 embedding 공간의 분포를 flatten 시켜 uniformity를 증가시킨다는 것을 증명하고 있다.</p>
+  </li>
+</ol>
+
+<h1 id="2-backgroud-contrastive-learning">2. Backgroud: Contrastive learning</h1>
+
+<p>Contrastive learning의 목표는 의미론적으로 이웃은 가깝게, 그렇지 않은 것은 멀리 위치하도록 representaion 하는 것을 목표로 학습되는 방식이다.</p>
+
+<p>$\mathcal{D} = {(x_I, x_i^+)}_{i=1}^{m}$이라는 pair example을 가정하고 여기서 $x_i$와 $x_i^+$를 의미적으로 연관있는 pair이다.</p>
+
+<p>여기서 $\bf{h}_i$, $\bf{h}_i^+$는 $x_i$와 $x_i^+$의 representation 벡터를 의미하고 이때 ( $x_i, x_i^+$)에 대한 mini-batch N pair의 loss term은 다음과 같다.</p>
+
+\[l_i = -log\frac{e^{sim(h_i, h_i^+)/\tau}}{\sum^N_{j=1}e^{sim(h_i, h_j^+)/\tau}}\]
+
+<blockquote>
+  <p>여기서 $Sim(h_1,h_2)$은 두 sentence embedding 사이의 코사인 유사도를 의미한다.</p>
+
+  <p>negative pair는 분모로 두고 positive pair는 분자로 둬 similarity를 학습하도록 contrastive loss를 구성하게 된다.</p>
+</blockquote>
+
+<p>loss가 같아도 positive 및 negative pair를 어떻게 구성하냐에 따라 성능이 달라진다. 특히 label이 없는 상황에서 positive pair를 어떻게 구축할지는 논문의 주된 contribution이라고 할 수 있다. 계속 언급되는 positive pair의 semantically related는 표현이 다르더라도 두 문장간의 맥락이 유사하길 기대하는 것을 의미한다.</p>
+
+<h2 id="positive-instances">positive instances</h2>
+
+<p>contrastive learning에서의 중요한 질문중 하나는 ($x_i, x_i^+$)를 어떻게 구성하냐이다.</p>
+
+<p>vision 분야에서는 효과적인 positive pair를 위해 random한 data augmentation(cropping, flipping, distortion and rotation) 등을 활용한다.</p>
+
+<p>하지만 NLP task에서는 언어의 discrete한 성질 때문에 vision에서의 augmentaion과 같은 word level에서의 단순 augmentation은 리스키하고, dropout을 사용하는 것이 위와 같은 discrete operator보다 좋은 퍼포먼스를 발휘한다고 논문에서는 말하고 있다.</p>
+
+<p>또한, question-passage pair와 같은 supervised 데이터셋으로부터 수집되는 ($x_i, x_i^+$)는 일상에서 각각 수집되는 특성으로 인해 항상 dual-encoder의 형식에서 사용되어왔다.(현재 문장과 다음문장을 각각 별개의 인코더로 구성하여 사용)</p>
+
+<h2 id="alignment-and-uniformity">Alignment and uniformity</h2>
+
+<p>논문에서는 contrastive learning의 핵심 특성을 alignment와 uniformity이며 contrastive learning을 통한 representation의 퀄리티를 두 가지로 측정할 수 있다고 한다.</p>
+
+<p>alignment는 positive pair의 분포가 주어질 때 두 pair instance의 embedding 사이 거리를 뜻한다.</p>
+
+<p>uniformity는 representation sphere에서 embedding들 자체가 얼마나 균등하게 분포되어있나를 의미한다.</p>
+
+\[l_{align}\triangleq\mathbb{E}_{(x_i, x_i^+)p_{pos}}||f(x)-f(x^+)||^2\\
+l_{uniform}\triangleq log\mathbb{E}_{x,y\overset{\underset{\mathrm{iid}}{}}{\sim}p_{data}}e^{-2||f(x)-f(y)||^2}\]
+
+<blockquote>
+  <p>여기서 $p_{data}$는 데이터의 분포를 의미한다.</p>
+</blockquote>
+
+<p>논문에서는 alignment와 uniform에 대한 term인 $l_{align}, l_{uniform}$은 contrastive learning의 objective fuction과 함께 잘 aligned 된다고 표현하고 있다.</p>
+
+<p>이는 pos pair는 가까이, random instance에 대한 embedding은 전체 representation sphere에 흩어져 있도록 학습된다는 것을 의미한다.</p>
+
+<h1 id="3-unsupervised-simcse">3. Unsupervised SimCSE</h1>
+
+<p>SimCSE의 비지도학습 아이디어는 매우 간단하다.</p>
+
+<ol>
+  <li>우선 전체 sentence의 집합 {$x_i$}$_{i=1}^m$로부터 $x_i^+ = x_i$로 정의된 $x_i$를 가져온다.</li>
+  <li>Identical positive pair로 작동하도록 독립적으로 샘플링된 dropout mask($h_i^z=f_\theta (x_i, z)$)를 사용한다.</li>
+  <li>같은 input을 두 번 encoder에 넣을 때 다른 dropout mask를 가진 embedding $z, z’$을 얻는다.</li>
+  <li>이 때 N개의 mini-batch에서의 training objective는 아래와 같다.</li>
+</ol>
+
+\[l_i = -log\frac{e^{sim(h_i^{z_i}, h_i^{z'_i})/\tau}}{\sum^N_{j=1}e^{sim(h_i^{z_i}, h_j^{z'_j})/\tau}}\]
+
+<blockquote>
+  <p>여기서 $z$는 transformer의 standard dropout mask를 의미한다.</p>
+</blockquote>
+
+<h2 id="dropout-noise-as-data-augmentation">Dropout noise as data augmentation.</h2>
+
+<h2 id="why-does-it-work">Why does it work?</h2>
+
+<h1 id="4-supervised-simcse">4. Supervised SimCSE</h1>
+
+<h2 id="choices-of-labeled-data">Choices of labeled data</h2>
+
+<h2 id="contradiction-as-hard-negatives">Contradiction as hard negatives</h2>
+
+<h1 id="5-connection-to-anisotrpy">5. Connection to Anisotrpy</h1>
+
+
+</article>
+
+
+</div>
+  </main>
+  <footer class="mt-auto py-3 text-center">
+
+  <small class="text-muted mb-2">
+    <i class="fas fa-code"></i> with <i class="fas fa-heart"></i>
+    by <strong>Doyeon Yoon</strong>
+  </small>
+
+  <div class="container-fluid justify-content-center"><a class="social mx-1"  href="mailto:ydy89899@gmail.com"
+       style="color: #6c757d"
+       onMouseOver="this.style.color='#db4437'"
+       onMouseOut="this.style.color='#6c757d'">
+      <i class="fas fa-envelope fa-1x"></i>
+    </a><a class="social mx-1"  href="https://www.github.com/ydy8989"
+       style="color: #6c757d"
+       onMouseOver="this.style.color='#333333'"
+       onMouseOut="this.style.color='#6c757d'">
+      <i class="fab fa-github fa-1x"></i>
+    </a><a class="social mx-1"  href="https://www.linkedin.com/in/doyeon-yoon"
+       style="color: #6c757d"
+       onMouseOver="this.style.color='#007bb5'"
+       onMouseOut="this.style.color='#6c757d'">
+      <i class="fab fa-linkedin-in fa-1x"></i>
+    </a>
+
+</div><small id="attribution">
+    theme <a href="https://github.com/YoussefRaafatNasry/portfolYOU">portfolYOU</a>
+  </small>
+
+</footer>
+
+  
+  <!-- GitHub Buttons -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+<!-- jQuery CDN -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Popper.js CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+
+<!-- Bootstrap JS CDN -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<!-- wow.js CDN & Activation -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
+<script> new WOW().init(); </script>
+
+<!-- Initialize all tooltips -->
+<script>
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+})
+</script>
+<script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="doyeon" data-description="Support me on Buy me a coffee!" data-message="Thank you for visiting." data-color="#007bff" data-position="Right" data-x_margin="16" data-y_margin="16"></script></body>
+
+</html>

@@ -1,12 +1,15 @@
-- name: Python
-  percentage: 90
+- name: Langchain, Langserve
+  percentage: 80
   color:
 
-- name: Javascript
-  percentage: 40
+- name: Pytorch
+  percentage: 90
   color: danger
 
 - name: Huggingface
   percentage: 80
   color: success
 
+- name: Docker
+  percentage: 70
+  color: info
