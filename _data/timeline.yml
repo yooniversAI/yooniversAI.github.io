@@ -1,12 +1,22 @@
-- title: Machine Learning Engineer, Hbee, Pohang
+- title: ML 엔지니어, 라이앤캐처스, 서울
+  from: Nov, 2021
+  to:
+  description: NLP 및 RecSys 업무를 수행했습니다.<br />
+    • 와인나라 추천시스템 ML 모델링<br />
+    • 대스타 해결사 플랫폼 준우승<br />
+    • 사내 추천시스템 개발<br />
+    • AI 채용 자동화(표절검사기)<br />
+    • 글로컬 LLM RAG 서버 구축
+
+- title: ML 엔지니어, HBEE, 동탄
   from: Nov, 2018
   to: Dec, 2018
-  description: Worked on various machine learning related tasks, including but not limited to:<br />
+  description: 반도체 센서데이터를 활용한 여러 모델링 업무를 수행했습니다.<br />
     • Anomaly detection in semiconductor process<br />
     • Stacked Auto-Encoder with short time series<br />
     • Semi-supervised GAN with image data
 
-- title: Intern, POSTECH Institute of Artificial Intelligence, Pohang
+- title: 인턴, 포항공대 인공지능연구원(PIAI), 포항
   from: Nov, 2018
   to: Dec, 2018
   description: Worked on various machine learning related tasks, including but not limited to:<br />
