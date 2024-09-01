@@ -63,8 +63,3 @@ description: ▶️ 서류 평가를 자동화하기 위한 13가지 평가 항�
     - 어절 표절
     - 의미없는 내용 반복 선별
     - 반복 글자 검출 
-
-
-<p class="text-center">
-{% include elements/button.html link="https://github.com/ydy8989" text="Repository" %}
-</p>

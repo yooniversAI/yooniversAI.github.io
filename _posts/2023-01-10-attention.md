@@ -6,6 +6,13 @@ color: danger
 tags: [Attention, review]
 description: 2015년 ICLR에서 등장한 논문으로써 처음 번역 분야에 Attention 개념을 사용한 논문으로 알려져있다. 딥린이의 필수 관문이라고 생각하기에 리뷰를 시작하려 한다.
 ---
+{% capture list_items %}
+1. Main contributions
+2. Abstract, Introduction
+3. Learning to align and translate
+4. Experiment
+{% endcapture %}
+{% include elements/list.html title="Table of Contents" type="toc" %}
 
 [paper : Neural Machine Translation by Jointly Learning to Align and Translate](https://arxiv.org/pdf/1409.0473.pdf)
 

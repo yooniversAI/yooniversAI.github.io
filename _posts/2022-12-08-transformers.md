@@ -8,9 +8,19 @@ tags: [transformer, review]
 description: 이번 포스팅은 최근 2년간의 NLP task에서 SOTA를 기록했던 모델들의 모태가 되는 Transformer(NIPS 2017)에 대한 논문을 리뷰하려 한다.
 ---
 
-[//]: # (<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script> )
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script> 
+{% capture list_items %}
+1. Motivation
+2. Model Architecture
+3. Why self-attention?
+4. Experiments
+{% endcapture %}
+{% include elements/list.html title="Table of Contents" type="toc" %}
 
-아무튼 제목 때문에 NLP에 대한 지식이 없었던 나로서는 이 논문이 attention 구조가 등장한 첫 논문이라고 생각했었다. (attention 구조의 첫 등장은 [Neural Machine Translation by Jointly Learning to Align and Translate](https://arxiv.org/pdf/1409.0473.pdf)라는 논문이다.) 
+이번 포스팅은 최근 2년간의 NLP task에서 SOTA를 기록했던 모델들의 모태가 되는 Transformer(NIPS 2017)에 대한 논문을 리뷰하려 합니다. Transformer 구조가 특히나 인기(?)를 끌었던 이유중 하나는 논문의 제목도 한 몫을 했다고 생각합니다. 
+Attention is all you need이라는 제목에서 짐작할 수 있듯이, 기존까지의 NMT 분야에서 주로 사용되었던 RNN기반의 아키텍쳐가 사용되지 않고, attention 기반의 구조만(그런데 이제 약간 Positional Encoding을 섞은)을 사용한 모델입니다.
+아무튼 제목 때문에 NLP에 대한 지식이 없었던 저로서는 이 논문이 attention 구조가 등장한 첫 논문이라고 생각했었습니다. 
+(attention 구조의 첫 등장은 [Neural Machine Translation by Jointly Learning to Align and Translate](https://arxiv.org/pdf/1409.0473.pdf)라는 논문이다.) 
 
 > 이전 [포스팅](https://ydy8989.github.io/2020-11-15-attention/)에서 리뷰하였으니 attention에 대한 정보가 없다면, 간단히 참고하는 것을 추천한다.
 
