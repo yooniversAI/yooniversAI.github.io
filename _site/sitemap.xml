@@ -18,6 +18,38 @@
     </url>
   
     <url>
+      <loc>http://localhost:4000/blog/electra</loc>
+      
+        <lastmod>2023-01-27T00:00:00+09:00</lastmod>
+      
+
+      
+        <changefreq>weekly</changefreq>
+      
+
+      
+          <priority>0.5</priority>
+      
+
+    </url>
+  
+    <url>
+      <loc>http://localhost:4000/blog/polyencoder</loc>
+      
+        <lastmod>2023-01-11T00:00:00+09:00</lastmod>
+      
+
+      
+        <changefreq>weekly</changefreq>
+      
+
+      
+          <priority>0.5</priority>
+      
+
+    </url>
+  
+    <url>
       <loc>http://localhost:4000/blog/attention</loc>
       
         <lastmod>2023-01-10T00:00:00+09:00</lastmod>
