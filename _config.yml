@@ -8,7 +8,8 @@
 title               : YooniversAI
 description         : >-
                       YOON + AI <br>
-                      인공지능의 보편적 가치를 추구하는 개발자 윤도연 입니다.
+                      인공지능의 보편적 가치를 추구하는 개발자 <br> 윤도연 입니다.
+
 baseurl             : ""                     # Change to empty quotes if you are hosting your site at <your-username>.github.io directly
 repository          : yooniversAI/yooniversAI.github.io     # Change to <your-username>/<your-username>.github.io (or remove it if you don't need remote projects)
 remote_theme        : yooniversAI/portfolYOU
@@ -31,7 +32,8 @@ nav_exclude:                                            # The following paths ar
 ### Author Info ###
 author:
   name              : Doyeon Yoon
-  image             : https://user-images.githubusercontent.com/120036648/206411545-4e7eea0d-06e9-43e8-a6b7-638a03855365.png
+  image             : https://github.com/user-attachments/assets/b3755e25-6654-46bb-9f73-c50b9f0875c6
+#  https://user-images.githubusercontent.com/120036648/206411545-4e7eea0d-06e9-43e8-a6b7-638a03855365.png
 #  behance           : your_username
 # dribbble          : your_username
   email             : ydy89899@gmail.com
