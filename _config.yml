@@ -8,7 +8,7 @@
 title               : YooniversAI
 description         : >-
                       YOON + AI <br>
-                      인공지능의 보편적 가치를 추구하는 개발자 YooniversAI 입니다. 
+                      인공지능의 보편적 가치를 추구하는 개발자 윤도연 입니다.
 baseurl             : ""                     # Change to empty quotes if you are hosting your site at <your-username>.github.io directly
 repository          : yooniversAI/yooniversAI.github.io     # Change to <your-username>/<your-username>.github.io (or remove it if you don't need remote projects)
 remote_theme        : yooniversAI/portfolYOU
