@@ -5,7 +5,7 @@ subtitle: Efficiently Learning an Encoder that Classifies Token Replacements Acc
 style: border
 color: danger
 tags: [sentence embedding, poly-encoder, review]
-description: cross-encoder와 bi-encoder의 장점만을 취한 poly-encoder를 소개합니다.
+description: cross-encoder와 bi-encoder 그 사이 어딘가....
 ---
 
 {% capture list_items %}

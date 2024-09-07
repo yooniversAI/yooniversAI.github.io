@@ -1,6 +1,14 @@
 [
   
     {
+      "title"    : "리뷰 예정 논문 목록",
+      "category" : "",
+      "tags"     : "review, coming soon",
+      "url"      : "/blog/ready",
+      "date"     : "2024-09-04 00:00:00 +0900"
+    } ,
+  
+    {
       "title"    : "SimCSE ◀️ Simple Contrastive learning of Sentence Embedding",
       "category" : "",
       "tags"     : "sentence embedding, contrastive learning, review",
