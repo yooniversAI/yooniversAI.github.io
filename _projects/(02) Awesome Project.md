@@ -1,7 +1,7 @@
 ---
 name: "[ 2 ] AI 서류평가자동화 프로젝트"
 tools: [NLP, 2023.06-2024.04, Fine-tuning]
-image: https://github.com/user-attachments/assets/7e24276a-46e0-42a1-a28e-cefde09b2205
+image: https://github.com/user-attachments/assets/82c72047-c57e-4ef2-8c01-60fca4a35766
 description: ▶️ 서류 평가를 자동화하기 위한 13가지 평가 항목에 대한 개발
 ---
 
