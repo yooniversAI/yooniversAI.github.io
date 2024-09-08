@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+
+<!--
+  portfolYOU Jekyll theme by Youssef Raafat
+  Free for personal and commercial use under the MIT license
+  https://github.com/YoussefRaafatNasry/portfolYOU
+-->
+
+<html lang="en" class="h-100">
+  
+<head>
+
+  
+  
+  
+
+  
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="[ 3 ] 사내 지식거래 플랫폼 문서 유사도 모델링">
+  <meta property="og:description" content="▶️ 사내 서비스 내 문서간 유사도를 계산해 사용자의 게시글과 유사한 문서끼리 묶어주는 기능 개발">
+  <meta property="og:image" content="https://github.com/user-attachments/assets/00c30155-d7ba-4c6f-99f1-c81714aa90f9">
+
+  <title>[ 3 ] 사내 지식거래 플랫폼 문서 유사도 모델링</title>
+  <meta name="description" content="▶️ 사내 서비스 내 문서간 유사도를 계산해 사용자의 게시글과 유사한 문서끼리 묶어주는 기능 개발">
+
+  <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon.ico">
+
+  <!-- Theme style -->
+  <script src="/assets/js/theme.js"></script>
+
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.0/css/all.css">
+
+  <!-- Bootstrap CSS CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+
+  <!-- Animate CSS CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+</head>
+
+
+<body class="h-100 d-flex flex-column">
+
+  <main class="flex-shrink-0 container mt-5">
+    <nav class="navbar navbar-expand-lg navbar-themed">
+
+  <a class="navbar-brand" href="/"><h5><b>YooniversAI</b></h5></a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <i class="fas fa-1x fa-bars text-themed"></i>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav ml-auto"><a class="nav-item nav-link active" href="/projects/">Portfolio</a>
+
+      <a class="nav-item nav-link " href="/blog/">Posting</a>
+
+      <a class="nav-item nav-link " href="/about/">About Me</a>
+
+      
+
+      <span id="theme-toggler" class="nav-item nav-link" role="button" onclick="toggleTheme()"></span>
+    </div>
+  </div>
+
+</nav>
+    <div class="col-lg-10 mx-auto mt-5 markdown-body">
+  <h1 id="사내-지식거래-플랫폼-문서-유사도-모델링">사내 지식거래 플랫폼 문서 유사도 모델링</h1>
+
+<ul>
+  <li><a href="#1-프로젝트 개요">1. 프로젝트 개요</a></li>
+  <li><a href="#2-method">2. Method</a>
+    <ul>
+      <li><a href="#21-특이사항">2.1 특이사항</a></li>
+      <li><a href="#22-기능-구현">2.2 기능 구현</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="1-프로젝트-개요">1. 프로젝트 개요</h2>
+<ul>
+  <li><strong>기간</strong> : 2023.01-2023.04</li>
+  <li><strong>목표</strong> : 사내 서비스 내 문서간 유사도를 계산해 노출(추천) 시켜주는 ML 파이프라인 구현</li>
+  <li><strong>데이터</strong> : KorSTS, KorNLI</li>
+  <li><strong>기술 스택</strong> : Docker, MongoDB, Pytorch, FastAPI, HuggingFace</li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="2-method">2. Method</h2>
+
+<p><img src="https://github.com/user-attachments/assets/5a708ab8-7154-46da-b2e3-27a627391ae3" alt="image" /></p>
+
+<blockquote>
+  <ol>
+    <li>문서 적재</li>
+    <li>적재된 문서에 대해 전처리, Bert 임베딩, SimCSE 임베딩을 순차적으로 진행</li>
+    <li>Bert 임베딩을 기준으로 Candidate 문서를 선정, SimCSE 임베딩을 기준으로 candidate 문서 후보들 중 가장 유사한 문서를 리랭킹</li>
+  </ol>
+</blockquote>
+
+<p><br /></p>
+
+<h3 id="21-특이사항">2.1 특이사항</h3>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">지식에 대한 권리를 사고 판다</code>는 서비스의 기획상 먼저 작성된 글에 대한 권리를 더 인정해주는 방향으로 개발을 진행</li>
+  <li>임의의 두 게시글의 유사성이 높을 때, 나중에 작성된 글은 먼저 작성된 글 아래에 “유사 문서”의 형태로 노출</li>
+  <li>따라서 문서가 실시간으로 입력될 때마다 전체를 대상으로 유사도를 계산하는 것이 아닌, 새로운 문서가 기존 문서와 얼마나 유사한지만 계산하면 됨</li>
+</ul>
+
+<h3 id="22-기능-구현">2.2 기능 구현</h3>
+<ul>
+  <li>Candidate retrieval : Bert 임베딩을 기준으로 대충 유사해 보이는 문서 후보를 선정</li>
+  <li>Re-ranking : SimCSE 임베딩을 기준으로 후보들 중 가장 유사한 문서를 리랭킹 진행</li>
+  <li>리랭킹은 배치 단위로 진행</li>
+  <li>리랭킹 결과는 MongoDB에 저장, 문서 id request시 유사 문서의 인덱스와 스코어를 response 하는 api 구현</li>
+</ul>
+
+</div>
+  </main>
+  <footer class="mt-auto py-3 text-center">
+
+  <small class="text-muted mb-2">
+    <i class="fas fa-code"></i> with <i class="fas fa-heart"></i>
+    by <strong>Doyeon Yoon</strong>
+  </small>
+
+  <div class="container-fluid justify-content-center"><a class="social mx-1"  href="mailto:ydy89899@gmail.com"
+       style="color: #6c757d"
+       onMouseOver="this.style.color='#db4437'"
+       onMouseOut="this.style.color='#6c757d'">
+      <i class="fas fa-envelope fa-1x"></i>
+    </a><a class="social mx-1"  href="https://www.github.com/ydy8989"
+       style="color: #6c757d"
+       onMouseOver="this.style.color='#333333'"
+       onMouseOut="this.style.color='#6c757d'">
+      <i class="fab fa-github fa-1x"></i>
+    </a><a class="social mx-1"  href="https://www.linkedin.com/in/doyeon-yoon"
+       style="color: #6c757d"
+       onMouseOver="this.style.color='#007bb5'"
+       onMouseOut="this.style.color='#6c757d'">
+      <i class="fab fa-linkedin-in fa-1x"></i>
+    </a>
+
+</div><small id="attribution">
+    theme <a href="https://github.com/YoussefRaafatNasry/portfolYOU">portfolYOU</a>
+  </small>
+
+</footer>
+
+  
+  <!-- GitHub Buttons -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+<!-- jQuery CDN -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Popper.js CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+
+<!-- Bootstrap JS CDN -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<!-- wow.js CDN & Activation -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
+<script> new WOW().init(); </script>
+
+<!-- Initialize all tooltips -->
+<script>
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+})
+</script>
+<script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="doyeon" data-description="Support me on Buy me a coffee!" data-message="Thank you for visiting." data-color="#007bff" data-position="Right" data-x_margin="16" data-y_margin="16"></script></body>
+
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+
+<!--
+  portfolYOU Jekyll theme by Youssef Raafat
+  Free for personal and commercial use under the MIT license
+  https://github.com/YoussefRaafatNasry/portfolYOU
+-->
+
+<html lang="en" class="h-100">
+  
+<head>
+
+  
+  
+  
+
+  
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="[ 1 ] 글로컬 대학 AI 조교 구축 프로젝트">
+  <meta property="og:description" content="▶️ 각 대학에서 요구하는 AI 조교를 구축하는 프로젝트 입니다.">
+  <meta property="og:image" content="https://github.com/user-attachments/assets/6f679575-35ac-4c56-bb0b-205f21dec080">
+
+  <title>[ 1 ] 글로컬 대학 AI 조교 구축 프로젝트</title>
+  <meta name="description" content="▶️ 각 대학에서 요구하는 AI 조교를 구축하는 프로젝트 입니다.">
+
+  <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon.ico">
+
+  <!-- Theme style -->
+  <script src="/assets/js/theme.js"></script>
+
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.0/css/all.css">
+
+  <!-- Bootstrap CSS CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+
+  <!-- Animate CSS CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+</head>
+
+
+<body class="h-100 d-flex flex-column">
+
+  <main class="flex-shrink-0 container mt-5">
+    <nav class="navbar navbar-expand-lg navbar-themed">
+
+  <a class="navbar-brand" href="/"><h5><b>YooniversAI</b></h5></a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <i class="fas fa-1x fa-bars text-themed"></i>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav ml-auto"><a class="nav-item nav-link active" href="/projects/">Portfolio</a>
+
+      <a class="nav-item nav-link " href="/blog/">Posting</a>
+
+      <a class="nav-item nav-link " href="/about/">About Me</a>
+
+      
+
+      <span id="theme-toggler" class="nav-item nav-link" role="button" onclick="toggleTheme()"></span>
+    </div>
+  </div>
+
+</nav>
+    <div class="col-lg-10 mx-auto mt-5 markdown-body">
+  <h1 id="글로컬-대학-ai-조교-구축-프로젝트">글로컬 대학 AI 조교 구축 프로젝트</h1>
+<ul>
+  <li><a href="#1-프로젝트-개요">1. 프로젝트 개요</a></li>
+  <li><a href="#2-역할">2. 역할</a></li>
+  <li><a href="#3-기술-스택">3. 기술 스택</a></li>
+  <li><a href="#4-challenges">4. Challenges</a></li>
+</ul>
+
+<h2 id="1-프로젝트-개요">1. 프로젝트 개요</h2>
+<hr />
+<ul>
+  <li><strong>기간</strong> : 2024.07-(진행중)</li>
+  <li><strong>목표</strong> : 각 대학에서 요구하는 AI 조교(LLM) 구축, 특징은 각 대학이 요구하는 다양한 양식대로 답변하도록 템플릿 작성에 힘써야함</li>
+  <li><strong>모델</strong> : HyperclovaX, ChatGPT</li>
+  <li><strong>기술 스택</strong> : HuggingFace, Langchain, Langserve, FastAPI, Milvus, Redis</li>
+  <li><strong>역할</strong> : RAG 서버(Langchain 서버) 구축 담당</li>
+</ul>
+
+<h2 id="2-역할축">2. 역할축</h2>
+<hr />
+<ul>
+  <li>역할 : RAG 서버(Langchain 서버) 구축 담당
+    <ul>
+      <li>Langchain을 활용한 채팅 Chain 설계</li>
+      <li>다양한 format을 지원하도록 loader 통합 구현</li>
+      <li>multi-turn 대화를 위한 유저, 세션별 히스토리 기록 Redis로 저장</li>
+      <li>Milvus vectorstore 파이프라인 구현</li>
+      <li>HyperclovaX의 Langchain 동작을 위한 커스텀</li>
+      <li>Langserve를 활용한 채팅 API 서빙</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="3-기술-스택">3. 기술 스택</h2>
+<hr />
+<ul>
+  <li>기술스택 : Python, Poetry, HuggingFace, Langchain, Langserve, FastAPI, Milvus, Redis, Docker, NCP</li>
+  <li>도구 : Pycharm, RedisInsight, Attu</li>
+  <li>협업 : Gitlab, Height, Notion</li>
+</ul>
+
+<h2 id="4-challenges">4. Challenges</h2>
+<hr />
+<ul>
+  <li>HyperclovaX의 token length 문제
+    <ul>
+      <li>HyperclovaX의 token length가 약 4096으로 제한되어 있어, context, chat_history, response를 포함하기엔 부족함</li>
+      <li>이를 해결하기 위해, RunnableBranch로 나누어 유저 쿼리가 소모하는 토큰의 양을 최대한 절약하도록 파이프라인 설계</li>
+      <li>토큰이 넉넉한 ChatGPT로의 유저 선택이 가능하도록 설계</li>
+    </ul>
+  </li>
+  <li>Langchain의 불안정성
+    <ul>
+      <li>LCEL 문법을 지향하는 Langchain의 레거시 문제로 인해 커스텀이 어려운 부분이나 버전 이슈가 자주 발생</li>
+      <li>최대한 커스텀을 진행하면서 문제 상황을 해결하는 중
+        <ul>
+          <li>ex) ConversationSummaryBufferMemory + RunnableWithMessageHistory</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+</div>
+  </main>
+  <footer class="mt-auto py-3 text-center">
+
+  <small class="text-muted mb-2">
+    <i class="fas fa-code"></i> with <i class="fas fa-heart"></i>
+    by <strong>Doyeon Yoon</strong>
+  </small>
+
+  <div class="container-fluid justify-content-center"><a class="social mx-1"  href="mailto:ydy89899@gmail.com"
+       style="color: #6c757d"
+       onMouseOver="this.style.color='#db4437'"
+       onMouseOut="this.style.color='#6c757d'">
+      <i class="fas fa-envelope fa-1x"></i>
+    </a><a class="social mx-1"  href="https://www.github.com/ydy8989"
+       style="color: #6c757d"
+       onMouseOver="this.style.color='#333333'"
+       onMouseOut="this.style.color='#6c757d'">
+      <i class="fab fa-github fa-1x"></i>
+    </a><a class="social mx-1"  href="https://www.linkedin.com/in/doyeon-yoon"
+       style="color: #6c757d"
+       onMouseOver="this.style.color='#007bb5'"
+       onMouseOut="this.style.color='#6c757d'">
+      <i class="fab fa-linkedin-in fa-1x"></i>
+    </a>
+
+</div><small id="attribution">
+    theme <a href="https://github.com/YoussefRaafatNasry/portfolYOU">portfolYOU</a>
+  </small>
+
+</footer>
+
+  
+  <!-- GitHub Buttons -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+<!-- jQuery CDN -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Popper.js CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+
+<!-- Bootstrap JS CDN -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<!-- wow.js CDN & Activation -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
+<script> new WOW().init(); </script>
+
+<!-- Initialize all tooltips -->
+<script>
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+})
+</script>
+<script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="doyeon" data-description="Support me on Buy me a coffee!" data-message="Thank you for visiting." data-color="#007bff" data-position="Right" data-x_margin="16" data-y_margin="16"></script></body>
+
+</html>

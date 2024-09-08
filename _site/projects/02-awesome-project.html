@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+
+<!--
+  portfolYOU Jekyll theme by Youssef Raafat
+  Free for personal and commercial use under the MIT license
+  https://github.com/YoussefRaafatNasry/portfolYOU
+-->
+
+<html lang="en" class="h-100">
+  
+<head>
+
+  
+  
+  
+
+  
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="[ 2 ] AI 서류평가자동화 프로젝트">
+  <meta property="og:description" content="▶️ 서류 평가를 자동화하기 위한 13가지 평가 항목에 대한 개발">
+  <meta property="og:image" content="https://github.com/user-attachments/assets/7e24276a-46e0-42a1-a28e-cefde09b2205">
+
+  <title>[ 2 ] AI 서류평가자동화 프로젝트</title>
+  <meta name="description" content="▶️ 서류 평가를 자동화하기 위한 13가지 평가 항목에 대한 개발">
+
+  <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon.ico">
+
+  <!-- Theme style -->
+  <script src="/assets/js/theme.js"></script>
+
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.0/css/all.css">
+
+  <!-- Bootstrap CSS CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+
+  <!-- Animate CSS CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+</head>
+
+
+<body class="h-100 d-flex flex-column">
+
+  <main class="flex-shrink-0 container mt-5">
+    <nav class="navbar navbar-expand-lg navbar-themed">
+
+  <a class="navbar-brand" href="/"><h5><b>YooniversAI</b></h5></a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <i class="fas fa-1x fa-bars text-themed"></i>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav ml-auto"><a class="nav-item nav-link active" href="/projects/">Portfolio</a>
+
+      <a class="nav-item nav-link " href="/blog/">Posting</a>
+
+      <a class="nav-item nav-link " href="/about/">About Me</a>
+
+      
+
+      <span id="theme-toggler" class="nav-item nav-link" role="button" onclick="toggleTheme()"></span>
+    </div>
+  </div>
+
+</nav>
+    <div class="col-lg-10 mx-auto mt-5 markdown-body">
+  <h1 id="ai-서류평가자동화-프로젝트">AI 서류평가자동화 프로젝트</h1>
+<ul>
+  <li><a href="#1-프로젝트-개요">1. 프로젝트 개요</a></li>
+  <li><a href="#2-프로젝트-설명">2. 프로젝트 설명</a>
+    <ul>
+      <li><a href="#21-ai-task">2.1 AI task</a></li>
+      <li><a href="#22-일반-task">2.2 일반 task</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="1-프로젝트-개요">1. 프로젝트 개요</h2>
+<hr />
+<ul>
+  <li><strong>기간</strong> : 2023.06-2024.04</li>
+  <li><strong>목표</strong> : 13개 task(AI task 6개)에 대한 표절 및 위반행위 검사기 구현</li>
+  <li><strong>사용 언어모델</strong> : RoBERTa-large</li>
+  <li><strong>기술 스택</strong> : Pytorch, Docker, HuggingFace</li>
+</ul>
+
+<h2 id="2-프로젝트-설명">2. 프로젝트 설명</h2>
+<hr />
+<ul>
+  <li>표절 검사기는 14가지 task에 대한 표절 및 위반행위 검사를 수행</li>
+  <li>AI 모델 6개, 일반 task 8개
+    <ul>
+      <li>AI task : 블라인드, 자사명 오기재, 욕설에 관한 Text Classification task</li>
+      <li>일반 task : 문장vs문장 표절, 형식 오류, 문장 구분, 반복 내용 선별 
+<img src="https://github.com/user-attachments/assets/b86be24c-643d-4072-be4c-af508c6bfc3a" alt="image" /></li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="21-ai-task">2.1 AI task</h3>
+<ul>
+  <li>블라인드 위반 : 가족, 회사, 학교, 지역명 등의 블라인드 위반 여부를 판단
+    <ul>
+      <li>데이터 : <code class="language-plaintext highlighter-rouge">[text, label]</code> 형태의 데이터 셋
+        <ul>
+          <li>라벨 : 0(정상), 1(블라인드 위반)</li>
+        </ul>
+      </li>
+      <li>모델 : <code class="language-plaintext highlighter-rouge">KLUE/RoBERTa-large</code>를 사용한 Fine-tuning 진행</li>
+      <li>로직 :
+        <ul>
+          <li>모델만으로는 100% 위반 행위를 검출하기 힘들기 때문에 1차적으로 Banword를 통해 스크리닝 후, 해당 단어가 포함된 문장에 대해서만 모델을 적용</li>
+          <li>위반 문장이 아님에도 위반이라고 하는 경우가 AI 서류 평가시에는 치명적이므로 precision을 최대한 높이는 threshold를 설정하여 검출</li>
+        </ul>
+      </li>
+      <li>결과 :
+        <ul>
+          <li>Precision : 0.99</li>
+          <li>Recall : 0.91</li>
+          <li>F1-score : 0.95</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>자사명 오기재 : 자사명이 올바르게 기재되었는지 판단
+    <ul>
+      <li>데이터 : <code class="language-plaintext highlighter-rouge">[text, label]</code> 형태의 데이터 셋
+        <ul>
+          <li>라벨 : 기업명이 들어간 문장에 대해 0(경험), 1(자사지원), 2(단순 언급)</li>
+        </ul>
+      </li>
+      <li>모델 : <code class="language-plaintext highlighter-rouge">KLUE/RoBERTa-large</code>를 사용한 Fine-tuning 진행</li>
+      <li>로직 :
+        <ul>
+          <li>미리 준비한 기업명 리스트에 대하여 해당 기업명이 포함되어 있는지 판단</li>
+          <li>기업명이 포함된 문장이 단순 경험문장인지, 해당 기업에 지원하기 위해 언급된 문장인지 분류</li>
+        </ul>
+      </li>
+      <li>결과 :
+        <ul>
+          <li>Precision : 0.99</li>
+          <li>F1-score : 0.96</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>욕설 여부 : 욕설이 포함되어 있는지 판단 - 블라인드와 라벨링만 제외하고 동일</li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="22-일반-task">2.2 일반 task</h3>
+<ul>
+  <li>7가지 task에 대한 표절 및 위반행위 검사를 수행
+    <ul>
+      <li>글자수 및 문장 수 오류</li>
+      <li>지원기업 오기재(오타검정)</li>
+      <li>문항 반복 선별</li>
+      <li>자기소개서와 상관없는 글</li>
+      <li>어절 표절</li>
+      <li>의미없는 내용 반복 선별</li>
+      <li>반복 글자 검출</li>
+    </ul>
+  </li>
+</ul>
+
+</div>
+  </main>
+  <footer class="mt-auto py-3 text-center">
+
+  <small class="text-muted mb-2">
+    <i class="fas fa-code"></i> with <i class="fas fa-heart"></i>
+    by <strong>Doyeon Yoon</strong>
+  </small>
+
+  <div class="container-fluid justify-content-center"><a class="social mx-1"  href="mailto:ydy89899@gmail.com"
+       style="color: #6c757d"
+       onMouseOver="this.style.color='#db4437'"
+       onMouseOut="this.style.color='#6c757d'">
+      <i class="fas fa-envelope fa-1x"></i>
+    </a><a class="social mx-1"  href="https://www.github.com/ydy8989"
+       style="color: #6c757d"
+       onMouseOver="this.style.color='#333333'"
+       onMouseOut="this.style.color='#6c757d'">
+      <i class="fab fa-github fa-1x"></i>
+    </a><a class="social mx-1"  href="https://www.linkedin.com/in/doyeon-yoon"
+       style="color: #6c757d"
+       onMouseOver="this.style.color='#007bb5'"
+       onMouseOut="this.style.color='#6c757d'">
+      <i class="fab fa-linkedin-in fa-1x"></i>
+    </a>
+
+</div><small id="attribution">
+    theme <a href="https://github.com/YoussefRaafatNasry/portfolYOU">portfolYOU</a>
+  </small>
+
+</footer>
+
+  
+  <!-- GitHub Buttons -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+<!-- jQuery CDN -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Popper.js CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+
+<!-- Bootstrap JS CDN -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<!-- wow.js CDN & Activation -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
+<script> new WOW().init(); </script>
+
+<!-- Initialize all tooltips -->
+<script>
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+})
+</script>
+<script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="doyeon" data-description="Support me on Buy me a coffee!" data-message="Thank you for visiting." data-color="#007bff" data-position="Right" data-x_margin="16" data-y_margin="16"></script></body>
+
+</html>
