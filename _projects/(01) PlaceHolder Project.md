@@ -2,7 +2,7 @@
 name: "[ 1 ] 글로컬 AI 조교 구축 프로젝트"
 tools: [NLP, LLM, 2024.07-]
 image: https://github.com/user-attachments/assets/bbf5b4de-8f58-4bc2-82e6-f3295a7d8e73
-description: Langchain과 HyperclovaX를 활용한 RAG 서버 구축 PoC 프로젝트에서, Langchain 서버의 채팅 api 구현 및 Milvus vectorstore 파이프라인 구축을 담당했습니다.
+description: ▶️ Langchain과 HyperclovaX를 활용한 RAG 서버 구축 프로젝트(PoC)
 ---
 <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script> 
 
