@@ -1,10 +1,13 @@
 ---
-name: "[ 1 ] 글로컬 AI 조교 구축 프로젝트"
-tools: [NLP, LLM, 2024.07-]
-image: https://github.com/user-attachments/assets/bbf5b4de-8f58-4bc2-82e6-f3295a7d8e73
-description: ▶️ Langchain과 HyperclovaX를 활용한 RAG 서버 구축 프로젝트(PoC)
+name: "1. RAG 기반 AI 조교 구축"
+period: "2024.09-2025.02"
+description: "하이브리드 RAG 검색을 지원하는 Langchain 서버 구축"
+company: "라이앤캐처스"
+tools: [NLP, LLM, RAG, Langchain, FastAPI, Milvus, Redis, Docker]
+external_url: "https://www.notion.so/whydo/RAG-AI-25aeb08342058026a33cd0db73e71664?source=copy_link"
 ---
-<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script> 
+
+<!-- <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script> 
 
 # RAG-파이프라인 구축
 - [1. Preview](#preview)
@@ -72,5 +75,5 @@ description: ▶️ Langchain과 HyperclovaX를 활용한 RAG 서버 구축 프�
 
 | Keep                                                         | Problem                                                      | Try  |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ---- |
-| - Langchain이라는 SDK를 조금이나마 deepdive한 경험이 매우 만족스러웠음<br />- DS와는 조금 거리가 있는 프로젝트였던 만큼 남는 시간을 개발 자체에 몰입하고자 했던 경험이 좋았음 | - 몇몇 부분에서 문제를 근원적으로 해결하는 것이 아니라 짧은 마감기한을 핑계로 우회 개발함<br />- 확장성을 고려하지 못함<br /> |- 일정관리에 신경쓰자. 운이 좋아서 잘 맞췄지만, 일정 예측이 힘든 만큼 더 시간 투자가 필요해보인다.<br />- Conventional Chain 말고 미리미리 확장성이 좋은 agent 방식으로 조금씩 바꾸기       |
+| - Langchain이라는 SDK를 조금이나마 deepdive한 경험이 매우 만족스러웠음<br />- DS와는 조금 거리가 있는 프로젝트였던 만큼 남는 시간을 개발 자체에 몰입하고자 했던 경험이 좋았음 | - 몇몇 부분에서 문제를 근원적으로 해결하는 것이 아니라 짧은 마감기한을 핑계로 우회 개발함<br />- 확장성을 고려하지 못함<br /> |- 일정관리에 신경쓰자. 운이 좋아서 잘 맞췄지만, 일정 예측이 힘든 만큼 더 시간 투자가 필요해보인다.<br />- Conventional Chain 말고 미리미리 확장성이 좋은 agent 방식으로 조금씩 바꾸기       | -->
 

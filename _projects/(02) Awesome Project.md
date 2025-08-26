@@ -1,8 +1,9 @@
 ---
-name: "[ 2 ] AI 서류평가자동화 프로젝트"
-tools: [NLP, 2023.06-2024.04, Fine-tuning]
-image: https://github.com/user-attachments/assets/82c72047-c57e-4ef2-8c01-60fca4a35766
-description: ▶️ 서류 평가를 자동화하기 위한 13가지 평가 항목에 대한 개발
+name: "2. AI 서류평가자동화"
+period: "2023.06-2024.04"
+description: "서류 평가를 자동화하기 위한 13가지 평가 항목에 대한 개발"
+company: "라이앤캐처스"
+tools: [NLP, Fine-tuning, 자동화, 서류평가]
 ---
 
 # AI 서류평가자동화 프로젝트

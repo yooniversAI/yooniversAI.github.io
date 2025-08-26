@@ -3,9 +3,170 @@ layout: default
 title: Portfolio
 permalink: /projects/
 weight: 1
-remote_projects:
-  - git-for-wizards
-  - arduino-visitor-counter
 ---
 
-{% include projects/index.html %}
+<div class="container mt-5">
+  <!-- <div class="row">
+    <div class="col-12">
+      <h1 class="text-center mb-5">🚀 Portfolio</h1>
+      <p class="text-center text-muted mb-5">AI/ML 프로젝트들을 소개합니다</p>
+    </div>
+  </div> -->
+
+  <!-- 프로젝트 그리드 -->
+  <div class="card-group mt-2">
+    
+    {% assign sorted_projects = site.projects | sort: 'name' %}
+    {% for project in sorted_projects %}
+      <div class="col-lg-6 my-3 wow animated fadeIn" data-wow-delay=".15s">
+        {% if project.external_url %}
+          <a href="{{ project.external_url }}" class="project card border border-primary" target="_blank">
+        {% else %}
+          <a href="{{ project.url }}" class="project card border border-primary">
+        {% endif %}
+          <div class="card-body text-themed">
+            <h3 class="card-title">
+              {% if project.emoji %}{{ project.emoji }} {% endif %}{{ project.name }}
+            </h3>
+            
+            {% if project.tools %}
+              <p class="card-text">
+                {% for tool in project.tools %}
+                  <span class="badge badge-primary">{{ tool }}</span>
+                {% endfor %}
+              </p>
+            {% endif %}
+            
+            {% if project.description %}
+              <p class="card-text">{{ project.description }}</p>
+            {% endif %}
+          </div>
+          
+          <div class="card-footer text-themed">
+            {% if project.period %}
+              {{ project.period }}
+            {% else %}
+              {% if project.company %}
+                {{ project.company }}
+              {% else %}
+                Project
+              {% endif %}
+            {% endif %}
+          </div>
+        </a>
+      </div>
+    {% endfor %}
+
+  </div>
+
+  <!-- 추가 정보 섹션
+  <div class="row mt-5">
+    <div class="col-12">
+      <div class="card bg-light">
+        <div class="card-body text-center">
+          <h5 class="card-title">💡 더 많은 프로젝트가 궁금하신가요?</h5>
+          <p class="card-text">GitHub에서 더 자세한 프로젝트들을 확인해보세요!</p>
+          <a href="https://github.com/ydy8989" class="btn btn-primary" target="_blank">
+            <i class="fab fa-github mr-2"></i>GitHub 방문하기
+          </a>
+        </div>
+      </div>
+    </div>
+  </div> -->
+</div>
+
+<style>
+/* 유리구슬 효과가 있는 프로젝트 카드 스타일 */
+.project {
+  transition: all 0.5s ease;
+  cursor: pointer;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border: 1px solid rgba(0, 123, 255, 0.2);
+}
+
+/* 다크모드에서 카드 배경색 변경 */
+[data-theme="dark"] .project {
+  background: linear-gradient(135deg, #1e1f20 0%, #1e1f20 100%);
+  border: 1px solid rgba(66, 153, 225, 0.3);
+}
+
+/* 무지개빛 그라데이션 배경 */
+.project::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 182, 193, 0.6) 0%,
+    rgba(255, 218, 185, 0.6) 16.66%,
+    rgba(255, 255, 224, 0.6) 33.33%,
+    rgba(173, 216, 230, 0.6) 50%,
+    rgba(221, 160, 221, 0.6) 66.66%,
+    rgba(255, 182, 193, 0.6) 83.33%,
+    rgba(255, 218, 185, 0.6) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 1;
+  background-size: 200% 200%;
+}
+
+/* 호버 시 무지개빛 효과 활성화 */
+.project:hover::before {
+  opacity: 1;
+  animation: rainbow-flow 4s ease-in-out infinite;
+}
+
+/* 무지개빛 흐름 애니메이션 - 부드러운 그라데이션 이동 */
+@keyframes rainbow-flow {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+/* 카드 내용을 무지개빛 효과 위에 표시 */
+.project .card-body,
+.project .card-footer {
+  position: relative;
+  z-index: 2;
+}
+
+.project:hover {
+  transform: translateY(-8px);
+  box-shadow: 
+    0 15px 35px rgba(0,0,0,0.1),
+    0 5px 15px rgba(0,0,0,0.08),
+    0 0 0 1px rgba(255,255,255,0.1);
+  border-color: rgba(0, 123, 255, 0.4);
+}
+
+.project:hover .card-title {
+  color: #0056b3 !important;
+  text-shadow: 0 0 10px rgba(0, 123, 255, 0.3);
+}
+
+/* 카드 그룹 간격 조정 */
+.card-group {
+  margin-bottom: 2rem;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .col-lg-6 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+</style>

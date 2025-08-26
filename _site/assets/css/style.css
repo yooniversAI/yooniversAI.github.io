@@ -100,8 +100,27 @@ body { font-family: 'GmarketSans', sans-serif; line-height: 1.7; font-size: 18px
 
 .search-box { box-shadow: none !important; }
 
-.post.card { border-radius: 15px; text-decoration: none !important; padding: 15px; height: 100%; }
-.post.card .card-footer { font-size: 14px; margin: 0 -15px -15px -15px; padding: 15px 35px; }
+.post.card { border-radius: 15px; text-decoration: none !important; padding: 15px; height: 100%; transition: all 0.5s ease; cursor: pointer; position: relative; overflow: hidden; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); border: 1px solid rgba(220, 53, 69, 0.2); }
+
+/* 다크모드에서 카드 배경색 변경 */
+[data-theme="dark"] .post.card { background: linear-gradient(135deg, #1e1f20 0%, #1e1f20 100%); border: 1px solid rgba(220, 53, 69, 0.3); }
+
+/* 무지개빛 그라데이션 배경 */
+.post.card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, rgba(255, 182, 193, 0.6) 0%, rgba(255, 218, 185, 0.6) 16.66%, rgba(255, 255, 224, 0.6) 33.33%, rgba(173, 216, 230, 0.6) 50%, rgba(221, 160, 221, 0.6) 66.66%, rgba(255, 182, 193, 0.6) 83.33%, rgba(255, 218, 185, 0.6) 100%); opacity: 0; transition: opacity 0.5s ease; z-index: 1; background-size: 200% 200%; }
+
+/* 호버 시 무지개빛 효과 활성화 */
+.post.card:hover::before { opacity: 1; animation: rainbow-flow 4s ease-in-out infinite; }
+
+/* 무지개빛 흐름 애니메이션 - 부드러운 그라데이션 이동 */
+@keyframes rainbow-flow { 0% { background-position: 0% 0%; }
+  50% { background-position: 100% 100%; }
+  100% { background-position: 0% 0%; } }
+/* 카드 내용을 무지개빛 효과 위에 표시 */
+.post.card .card-body, .post.card .card-footer { position: relative; z-index: 2; }
+
+.post.card:hover { transform: translateY(-8px); box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1), 0 5px 15px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.1); border-color: rgba(220, 53, 69, 0.4); }
+
+.post.card:hover .card-title { color: #dc3545 !important; text-shadow: 0 0 10px rgba(220, 53, 69, 0.3); }
 
 .post-metadata { font-size: 14px; margin-top: -6px; }
 .post-metadata .tag:hover { background-color: #007bff; color: white !important; }

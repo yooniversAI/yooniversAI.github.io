@@ -21,12 +21,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta property="og:type" content="website">
-  <meta property="og:title" content="[ 3 ] 사내 지식거래 플랫폼 문서 유사도 모델링">
-  <meta property="og:description" content="▶️ 사내 서비스 내 문서간 유사도를 계산해 사용자의 게시글과 유사한 문서끼리 묶어주는 기능 개발">
-  <meta property="og:image" content="https://github.com/user-attachments/assets/00c30155-d7ba-4c6f-99f1-c81714aa90f9">
+  <meta property="og:title" content="3. 문서 유사도 모델링">
+  <meta property="og:description" content="사내 서비스 내 문서간 유사도를 계산해 사용자의 게시글과 유사한 문서끼리 묶어주는 기능 개발">
+  <meta property="og:image" content="https://private-user-images.githubusercontent.com/120036648/482199196-60f38442-8ab7-4f28-b42a-fd1b3f8bb8dd.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NTYyMjY1MDcsIm5iZiI6MTc1NjIyNjIwNywicGF0aCI6Ii8xMjAwMzY2NDgvNDgyMTk5MTk2LTYwZjM4NDQyLThhYjctNGYyOC1iNDJhLWZkMWIzZjhiYjhkZC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwODI2JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDgyNlQxNjM2NDdaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1kOGIwNjI5MWIzODQ2OGE1MzM2NjIwMGI0OGMzOGE5NWUxZTgwZWRkNjcwMzlmNmM1NGEzY2QxN2YwOTMxZWVjJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.NK7oSjft6J-8sjVEciu1OJvUzoQWTHzdSxsx1qIS03I">
 
-  <title>[ 3 ] 사내 지식거래 플랫폼 문서 유사도 모델링</title>
-  <meta name="description" content="▶️ 사내 서비스 내 문서간 유사도를 계산해 사용자의 게시글과 유사한 문서끼리 묶어주는 기능 개발">
+  <title>3. 문서 유사도 모델링</title>
+  <meta name="description" content="사내 서비스 내 문서간 유사도를 계산해 사용자의 게시글과 유사한 문서끼리 묶어주는 기능 개발">
 
   <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon.ico">
 
@@ -76,53 +76,21 @@
     <div class="col-lg-10 mx-auto mt-5 markdown-body">
   <h1 id="사내-지식거래-플랫폼-문서-유사도-모델링">사내 지식거래 플랫폼 문서 유사도 모델링</h1>
 
+<h2 id="프로젝트-개요">프로젝트 개요</h2>
+<p>사내 서비스 내 문서간 유사도를 계산해 사용자의 게시글과 유사한 문서끼리 묶어주는 기능을 개발했습니다.</p>
+
+<h2 id="주요-기술">주요 기술</h2>
 <ul>
-  <li><a href="#1-프로젝트 개요">1. 프로젝트 개요</a></li>
-  <li><a href="#2-method">2. Method</a>
-    <ul>
-      <li><a href="#21-특이사항">2.1 특이사항</a></li>
-      <li><a href="#22-기능-구현">2.2 기능 구현</a></li>
-    </ul>
-  </li>
+  <li>NLP (Natural Language Processing)</li>
+  <li>문서 유사도 계산</li>
+  <li>추천시스템</li>
+  <li>벡터 임베딩</li>
 </ul>
 
-<h2 id="1-프로젝트-개요">1. 프로젝트 개요</h2>
+<h2 id="성과">성과</h2>
 <ul>
-  <li><strong>기간</strong> : 2023.01-2023.04</li>
-  <li><strong>목표</strong> : 사내 서비스 내 문서간 유사도를 계산해 노출(추천) 시켜주는 ML 파이프라인 구현</li>
-  <li><strong>데이터</strong> : KorSTS, KorNLI</li>
-  <li><strong>기술 스택</strong> : Docker, MongoDB, Pytorch, FastAPI, HuggingFace</li>
-</ul>
-
-<p><br /></p>
-
-<h2 id="2-method">2. Method</h2>
-
-<p><img src="https://github.com/user-attachments/assets/5a708ab8-7154-46da-b2e3-27a627391ae3" alt="image" /></p>
-
-<blockquote>
-  <ol>
-    <li>문서 적재</li>
-    <li>적재된 문서에 대해 전처리, Bert 임베딩, SimCSE 임베딩을 순차적으로 진행</li>
-    <li>Bert 임베딩을 기준으로 Candidate 문서를 선정, SimCSE 임베딩을 기준으로 candidate 문서 후보들 중 가장 유사한 문서를 리랭킹</li>
-  </ol>
-</blockquote>
-
-<p><br /></p>
-
-<h3 id="21-특이사항">2.1 특이사항</h3>
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">지식에 대한 권리를 사고 판다</code>는 서비스의 기획상 먼저 작성된 글에 대한 권리를 더 인정해주는 방향으로 개발을 진행</li>
-  <li>임의의 두 게시글의 유사성이 높을 때, 나중에 작성된 글은 먼저 작성된 글 아래에 “유사 문서”의 형태로 노출</li>
-  <li>따라서 문서가 실시간으로 입력될 때마다 전체를 대상으로 유사도를 계산하는 것이 아닌, 새로운 문서가 기존 문서와 얼마나 유사한지만 계산하면 됨</li>
-</ul>
-
-<h3 id="22-기능-구현">2.2 기능 구현</h3>
-<ul>
-  <li>Candidate retrieval : Bert 임베딩을 기준으로 대충 유사해 보이는 문서 후보를 선정</li>
-  <li>Re-ranking : SimCSE 임베딩을 기준으로 후보들 중 가장 유사한 문서를 리랭킹 진행</li>
-  <li>리랭킹은 배치 단위로 진행</li>
-  <li>리랭킹 결과는 MongoDB에 저장, 문서 id request시 유사 문서의 인덱스와 스코어를 response 하는 api 구현</li>
+  <li>문서 유사도 모델 구현</li>
+  <li>사용자 게시글과 유사한 문서 자동 그룹핑</li>
 </ul>
 
 </div>

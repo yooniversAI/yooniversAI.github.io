@@ -15,6 +15,8 @@ remote_theme        : yooniversAI/portfolYOU
 open_new_tab        : false                             # Opens external URLs in new tab (works for posts, projects and navbar only)
 
 
+
+
 ### Plugins ###
 plugins:
   - jemoji
@@ -31,7 +33,7 @@ nav_exclude:                                            # The following paths ar
 ### Author Info ###
 author:
   name              : Doyeon Yoon
-  image             : https://github.com/user-attachments/assets/b3755e25-6654-46bb-9f73-c50b9f0875c6
+  image             : https://private-user-images.githubusercontent.com/120036648/482199196-60f38442-8ab7-4f28-b42a-fd1b3f8bb8dd.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NTYyMjY1MDcsIm5iZiI6MTc1NjIyNjIwNywicGF0aCI6Ii8xMjAwMzY2NDgvNDgyMTk5MTk2LTYwZjM4NDQyLThhYjctNGYyOC1iNDJhLWZkMWIzZjhiYjhkZC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwODI2JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDgyNlQxNjM2NDdaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1kOGIwNjI5MWIzODQ2OGE1MzM2NjIwMGI0OGMzOGE5NWUxZTgwZWRkNjcwMzlmNmM1NGEzY2QxN2YwOTMxZWVjJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.NK7oSjft6J-8sjVEciu1OJvUzoQWTHzdSxsx1qIS03I #https://github.com/user-attachments/assets/b3755e25-6654-46bb-9f73-c50b9f0875c6
 #  https://user-images.githubusercontent.com/120036648/206411545-4e7eea0d-06e9-43e8-a6b7-638a03855365.png
 #  behance           : your_username
 # dribbble          : your_username
