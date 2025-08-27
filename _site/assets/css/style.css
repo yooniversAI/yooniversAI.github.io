@@ -100,7 +100,10 @@ body { font-family: 'GmarketSans', sans-serif; line-height: 1.7; font-size: 18px
 
 .search-box { box-shadow: none !important; }
 
-.post.card { border-radius: 15px; text-decoration: none !important; padding: 15px; height: 100%; transition: all 0.5s ease; cursor: pointer; position: relative; overflow: hidden; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); border: 1px solid rgba(220, 53, 69, 0.2); }
+.post.card { border-radius: 15px; text-decoration: none !important; padding: 15px; height: 100%; transition: all 0.5s ease; cursor: pointer; position: relative; overflow: hidden; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); border: 1px solid rgba(220, 53, 69, 0.2); /* 애니메이션 충돌 방지 */ animation: none !important; animation-delay: 0s !important; /* WOW.js 애니메이션 비활성화 */ opacity: 1 !important; transform: none !important; }
+
+/* WOW.js 애니메이션 완전 비활성화 */
+.wow.animated.fadeIn { animation: none !important; opacity: 1 !important; transform: none !important; }
 
 /* 다크모드에서 카드 배경색 변경 */
 [data-theme="dark"] .post.card { background: linear-gradient(135deg, #1e1f20 0%, #1e1f20 100%); border: 1px solid rgba(220, 53, 69, 0.3); }
