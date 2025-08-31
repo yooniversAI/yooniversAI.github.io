@@ -1,5 +1,5 @@
 .about-hero {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 35%, #06b6d4 65%, #8b5cf6 100%);
   color: white;
   padding: 2.5rem 0;
   margin-bottom: 2rem;
@@ -8,7 +8,7 @@
   overflow: hidden;
 }
 
-/* 연한 무지개빛 그라데이션 오버레이 */
+/* 연한 차가운 색상 오버레이 */
 .about-hero::before {
   content: '';
   position: absolute;
@@ -18,13 +18,11 @@
   bottom: 0;
   background: linear-gradient(
     135deg,
-    rgba(255, 182, 193, 0.05) 0%,
-    rgba(255, 218, 185, 0.05) 16.66%,
-    rgba(255, 255, 224, 0.05) 33.33%,
-    rgba(173, 216, 230, 0.05) 50%,
-    rgba(221, 160, 221, 0.05) 66.66%,
-    rgba(255, 182, 193, 0.05) 83.33%,
-    rgba(255, 218, 185, 0.05) 100%
+    rgba(79, 70, 229, 0.08) 0%,
+    rgba(124, 58, 237, 0.08) 25%,
+    rgba(6, 182, 212, 0.08) 50%,
+    rgba(139, 92, 246, 0.08) 75%,
+    rgba(79, 70, 229, 0.08) 100%
   );
   z-index: 1;
 }
@@ -103,7 +101,7 @@
 }
 
 .timeline-date {
-  color: #667eea;
+  color: #6366f1;
   font-weight: 600;
   font-size: 0.9rem;
   margin-bottom: 0.5rem;
@@ -178,7 +176,7 @@
     transform: translateX(-50%);
     width: 60px;
     height: 3px;
-    background: linear-gradient(90deg, #667eea, #764ba2);
+    background: linear-gradient(90deg, #4f46e5, #7c3aed, #8b5cf6);
     border-radius: 2px;
   }
 }
@@ -202,7 +200,7 @@
 
 /* 커스텀 링크 스타일 - 파란색 글씨에 흰색 테두리 */
 .about-hero .custom-link {
-  color: #007bff;
+  color: #6366f1;
   font-weight: 600;
   text-decoration: none;
   text-shadow: 
@@ -213,7 +211,7 @@
   transition: all 0.3s ease;
   
   &:hover {
-    color: #0056b3;
+    color: #4f46e5;
     text-shadow: 
       -1px -1px 0 #fff,
        1px -1px 0 #fff,
@@ -246,7 +244,7 @@
 }
 
 .skill-category-title {
-  color: #007bff;
+  color: #6366f1;
   font-size: 1.1rem;
   font-weight: 600;
   min-width: 200px;
@@ -264,55 +262,55 @@
   padding: 0.25rem 0.6rem;
   border-radius: 6px;
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: 800;
   background: transparent;
-  color: #667eea;
-  border: 1px solid #667eea;
+  color: #6366f1;
+  border: 1px solid #6366f1;
   transition: all 0.2s ease;
   
   &:hover {
-    background: #667eea;
+    background: #6366f1;
     color: white;
   }
 }
 
 /* 카테고리별 색상 구분 */
 .skill-category:nth-child(1) .skill-tag {
-  border-color: #be55f2;
-  color: #be55f2;
+  border-color: #8b5cf6;
+  color: #8b5cf6;
   
   &:hover {
-    background: #be55f2;
+    background: #8b5cf6;
     color: white;
   }
 }
 
 .skill-category:nth-child(2) .skill-tag {
-  border-color: #28a745;
-  color: #28a745;
+  border-color: #10b981;
+  color: #10b981;
   
   &:hover {
-    background: #28a745;
+    background: #10b981;
     color: white;
   }
 }
 
 .skill-category:nth-child(3) .skill-tag {
-  border-color: #fd7e14;
-  color: #fd7e14;
+  border-color: #f59e0b;
+  color: #f59e0b;
   
   &:hover {
-    background: #fd7e14;
+    background: #f59e0b;
     color: white;
   }
 }
 
 .skill-category:nth-child(4) .skill-tag {
-  border-color: #17a2b8;
-  color: #17a2b8;
+  border-color: #06b6d4;
+  color: #06b6d4;
   
   &:hover {
-    background: #17a2b8;
+    background: #06b6d4;
     color: white;
   }
 }
@@ -331,11 +329,11 @@
 // 다크모드 스타일
 [data-theme="dark"] {
   .about-hero {
-    background: linear-gradient(135deg, #4a5f8f 0%, #6b5b95 50%, #c0392b 100%);
+    background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #0c4a6e 100%);
   }
   
   .skill-category-title {
-    color: #007bff;
+    color: #6366f1;
   }
   
   .skill-category {
@@ -346,49 +344,52 @@
   
   .skill-tag {
     background: transparent;
+    border-color: #6366f1;
+    color: #6366f1;
     
     &:hover {
+      background: #6366f1;
       color: white;
     }
   }
   
   /* 다크모드에서도 카테고리별 색상 유지 */
   .skill-category:nth-child(1) .skill-tag {
-    border-color: #be55f2;
-    color: #be55f2;
+    border-color: #8b5cf6;
+    color: #8b5cf6;
     
     &:hover {
-      background: #be55f2;
+      background: #8b5cf6;
       color: white;
     }
   }
   
   .skill-category:nth-child(2) .skill-tag {
-    border-color: #28a745;
-    color: #28a745;
+    border-color: #10b981;
+    color: #10b981;
     
     &:hover {
-      background: #28a745;
+      background: #10b981;
       color: white;
     }
   }
   
   .skill-category:nth-child(3) .skill-tag {
-    border-color: #fd7e14;
-    color: #fd7e14;
+    border-color: #f59e0b;
+    color: #f59e0b;
     
     &:hover {
-      background: #fd7e14;
+      background: #f59e0b;
       color: white;
     }
   }
   
   .skill-category:nth-child(4) .skill-tag {
-    border-color: #17a2b8;
-    color: #17a2b8;
+    border-color: #06b6d4;
+    color: #06b6d4;
     
     &:hover {
-      background: #17a2b8;
+      background: #06b6d4;
       color: white;
     }
   }
@@ -428,7 +429,7 @@
   }
   
   .timeline-date {
-    color: #667eea;
+    color: #6366f1;
   }
   
   .timeline-title {
@@ -456,7 +457,7 @@
     color: rgba(white, 0.9);
     
     &::after {
-      background: linear-gradient(90deg, #667eea, #764ba2);
+      background: linear-gradient(90deg, #4f46e5, #7c3aed, #8b5cf6);
     }
   }
   

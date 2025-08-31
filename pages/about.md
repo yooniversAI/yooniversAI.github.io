@@ -53,22 +53,24 @@ weight: 3
     <div class="skill-category">
       <h3 class="skill-category-title">Data & Search</h3>
       <div class="skill-tags">
+        <span class="skill-tag">BigQuery</span>
         <span class="skill-tag">OpenSearch</span>
         <span class="skill-tag">Semantic Search</span>
-        <span class="skill-tag">Recommendation System</span>
-        <span class="skill-tag">Vector Similarity</span>
       </div>
     </div>
 
     <div class="skill-category">
-      <h3 class="skill-category-title">Development Tools</h3>
+      <h3 class="skill-category-title">DevOps & Tools</h3>
       <div class="skill-tags">
+        <span class="skill-tag">Airflow</span>
         <span class="skill-tag">Git</span>
         <span class="skill-tag">Wandb</span>
         <span class="skill-tag">Streamlit</span>
         <span class="skill-tag">Langchain</span>
       </div>
     </div>
+
+
   </div>
 
   <!-- Experience Section -->

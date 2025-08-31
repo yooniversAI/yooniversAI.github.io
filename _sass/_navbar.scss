@@ -5,6 +5,36 @@
   background: $primary;
 }
 
+/* Tag listing styles */
+.tag-section {
+  display: flex;
+  align-items: flex-start;
+}
+
+.tag-title {
+  min-width: 200px;
+  margin-right: 2rem;
+  margin-bottom: 0;
+  font-weight: bold;
+}
+
+.posts-list {
+  flex: 1;
+}
+
+.post-item {
+  margin-bottom: 0.5rem;
+}
+
+.post-item a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.post-item a:hover {
+  text-decoration: underline;
+}
+
 .nav-link,
 .navbar-brand {
   &::after {

@@ -8,24 +8,24 @@
 {%- endfor -%}
 {%- assign tags = tags | split:'|' | uniq | sort -%}
 
-<!-- List tags & related posts -->
+<!-- Simple markdown-style tag listing -->
 {% for tag in tags %}
-<div class="py-3">
-  <h4 id="{{ tag | slugify }}">{{ tag }}</h4>
-  <ol>
-  {% for post in site.posts %}
-    {%- if post.tags contains tag -%}
-      {%- if post.external_url -%}
-        {%- assign url = post.external_url -%}
-      {%- else -%}
-        {%- assign url = post.url | relative_url -%}
+<div class="tag-section mb-4">
+  <h4 class="tag-title">{{ tag }}</h4>
+  <div class="posts-list">
+    {% for post in site.posts %}
+      {%- if post.tags contains tag -%}
+        {%- if post.external_url -%}
+          {%- assign url = post.external_url -%}
+        {%- else -%}
+          {%- assign url = post.url | relative_url -%}
+        {%- endif -%}
+        <div class="post-item">
+          <a href="{{ url }}">{{ post.title }}</a>
+        </div>
       {%- endif -%}
-    <a href="{{ url }}"><li>{{ post.title }}</li></a>
-    <small class="text-muted"> - {{ post.date | date_to_long_string }}</small>
-    <br/>
-    {%- endif -%}
-  {% endfor %}
-  </ol>
+    {% endfor %}
+  </div>
 </div>
-<hr class="bg-light">
+<hr class="my-3">
 {% endfor %}
