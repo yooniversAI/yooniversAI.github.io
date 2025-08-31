@@ -1,10 +1,6 @@
 <!DOCTYPE html>
 
-<!--
-  portfolYOU Jekyll theme by Youssef Raafat
-  Free for personal and commercial use under the MIT license
-  https://github.com/YoussefRaafatNasry/portfolYOU
--->
+
 
 <html lang="en" class="h-100">
   
@@ -23,7 +19,7 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="SimCSE ◀️ Simple Contrastive learning of Sentence Embedding">
   <meta property="og:description" content="이번 포스팅은 EMNLP2021에 발표된 contrastive learning을 적용한 sentence embedding 방법론을 소개하려 한다.">
-  <meta property="og:image" content="/assets/images/doyeon_crop.jpg">
+  <meta property="og:image" content="/assets/images/sim.png">
 
   <title>SimCSE ◀️ Simple Contrastive learning of Sentence Embedding</title>
   <meta name="description" content="이번 포스팅은 EMNLP2021에 발표된 contrastive learning을 적용한 sentence embedding 방법론을 소개하려 한다.">
@@ -39,8 +35,7 @@
   <!-- Bootstrap CSS CDN -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
 
-  <!-- Animate CSS CDN -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css">
+
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="/assets/css/style.css">
@@ -60,9 +55,9 @@
   </button>
 
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav ml-auto"><a class="nav-item nav-link " href="/projects/">Portfolio</a>
+    <div class="navbar-nav ml-auto"><a class="nav-item nav-link " href="/projects/">Projects</a>
 
-      <a class="nav-item nav-link active" href="/blog/">Posting</a>
+      <a class="nav-item nav-link active" href="/blog/">Blog</a>
 
       <a class="nav-item nav-link " href="/about/">About Me</a>
 
@@ -108,7 +103,7 @@
 
 <h1 id="1-introduction">1. Introduction</h1>
 
-<p>SimCSE는 기존 vision 도메인에서 제시된 Contrastive learning 방법론인 SimCLR을 NLP 도메인으로 옮겨온 연구 결과라고 할 수 있다. RoBERTa와 SpanBERT의 저자로 알려진 Danqi Chen 교수의 SimCSE 논문에서는 아래 6가지 내용을 말하고 있다.</p>
+<p>SimCSE(<a href="https://arxiv.org/pdf/2104.08821">https://arxiv.org/pdf/2104.08821</a>)는 기존 vision 도메인에서 제시된 Contrastive learning 방법론인 SimCLR을 NLP 도메인으로 옮겨온 연구 결과라고 할 수 있다. RoBERTa와 SpanBERT의 저자로 알려진 Danqi Chen 교수의 SimCSE 논문에서는 아래 6가지 내용을 말하고 있다.</p>
 
 <ol>
   <li>
@@ -169,6 +164,8 @@
 <p>alignment는 positive pair의 분포가 주어질 때 두 pair instance의 embedding 사이 거리를 뜻한다.</p>
 
 <p>uniformity는 representation sphere에서 embedding들 자체가 얼마나 균등하게 분포되어있나를 의미한다.</p>
+
+<p>아래 그래프는 서로 다른 훈련 설정에서의 ℓ_uniform과 ℓ_align 손실 함수 값을 보여주는 2D 산점도입니다.</p>
 
 \[l_{align}\triangleq\mathbb{E}_{(x_i, x_i^+)p_{pos}}||f(x)-f(x^+)||^2\\
 l_{uniform}\triangleq log\mathbb{E}_{x,y\overset{\underset{\mathrm{iid}}{}}{\sim}p_{data}}e^{-2||f(x)-f(y)||^2}\]
@@ -235,7 +232,10 @@ l_{uniform}\triangleq log\mathbb{E}_{x,y\overset{\underset{\mathrm{iid}}{}}{\sim
 </footer>
 
   
-  <!-- GitHub Buttons -->
+  <!-- Theme switcher -->
+<script src="/assets/js/theme.js"></script>
+
+<!-- GitHub Buttons -->
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 
 <!-- jQuery CDN -->

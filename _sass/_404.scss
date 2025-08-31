@@ -1,0 +1,51 @@
+.error-page {
+  text-align: center;
+  padding: 4rem 0;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.error-code {
+  font-size: 8rem;
+  font-weight: bold;
+  color: #667eea;
+  margin-bottom: 1rem;
+  line-height: 1;
+}
+
+.error-message {
+  font-size: 1.5rem;
+  color: #6c757d;
+  margin-bottom: 2rem;
+}
+
+.error-description {
+  font-size: 1.1rem;
+  color: #6c757d;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.error-actions {
+  margin-top: 2rem;
+}
+
+.error-actions .btn {
+  margin: 0 0.5rem;
+}
+
+// 다크모드 스타일
+[data-theme="dark"] {
+  .error-code {
+    color: #4a5f8f;
+  }
+  
+  .error-message,
+  .error-description {
+    color: rgba(white, 0.7);
+  }
+}

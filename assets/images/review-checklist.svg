@@ -1,0 +1,58 @@
+<svg width="400" height="500" xmlns="http://www.w3.org/2000/svg">
+  <!-- 배경 -->
+  <rect width="400" height="500" fill="#1a1a1a"/>
+  
+  <!-- 제목 -->
+  <text x="20" y="30" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#007bff">리뷰 예정 논문 목록</text>
+  
+  <!-- 체크된 항목들 (회색 체크박스, 흰색 체크마크, 취소선) -->
+  <g>
+    <!-- 1. Poly-encoders -->
+    <rect x="20" y="50" width="16" height="16" fill="#666" rx="2"/>
+    <path d="M24 58 L28 62 L32 54" stroke="white" stroke-width="2" fill="none"/>
+    <text x="45" y="62" font-family="Arial, sans-serif" font-size="12" fill="#007bff" text-decoration="line-through">Poly-encoders: Transformer Architectures and Pre-training Strategies</text>
+    
+    <!-- 2. BERT -->
+    <rect x="20" y="80" width="16" height="16" fill="#666" rx="2"/>
+    <path d="M24 88 L28 92 L32 84" stroke="white" stroke-width="2" fill="none"/>
+    <text x="45" y="92" font-family="Arial, sans-serif" font-size="12" fill="#007bff" text-decoration="line-through">BERT: Pre-training of Deep Bidirectional Transformers for Language</text>
+    
+    <!-- 3. SimCSE -->
+    <rect x="20" y="110" width="16" height="16" fill="#666" rx="2"/>
+    <path d="M24 118 L28 122 L32 114" stroke="white" stroke-width="2" fill="none"/>
+    <text x="45" y="122" font-family="Arial, sans-serif" font-size="12" fill="#007bff" text-decoration="line-through">SimCSE: Simple Contrastive Learning of Sentence Embeddings</text>
+    
+    <!-- 4. Attention -->
+    <rect x="20" y="140" width="16" height="16" fill="#666" rx="2"/>
+    <path d="M24 148 L28 152 L32 144" stroke="white" stroke-width="2" fill="none"/>
+    <text x="45" y="152" font-family="Arial, sans-serif" font-size="12" fill="#007bff" text-decoration="line-through">Attention: Neural Machine Translation by Jointly Learning to Align</text>
+    
+    <!-- 5. Transformer -->
+    <rect x="20" y="170" width="16" height="16" fill="#666" rx="2"/>
+    <path d="M24 178 L28 182 L32 174" stroke="white" stroke-width="2" fill="none"/>
+    <text x="45" y="182" font-family="Arial, sans-serif" font-size="12" fill="#007bff" text-decoration="line-through">Transformer: Attention is All You Need</text>
+  </g>
+  
+  <!-- 체크되지 않은 항목들 (회색 체크박스, 체크마크 없음, 취소선 없음) -->
+  <g>
+    <!-- 6. DPR -->
+    <rect x="20" y="200" width="16" height="16" fill="#666" rx="2"/>
+    <text x="45" y="212" font-family="Arial, sans-serif" font-size="12" fill="#007bff">DPR: Dense Passage Retrieval for Open-Domain Question Answering</text>
+    
+    <!-- 7. BGE M3 -->
+    <rect x="20" y="230" width="16" height="16" fill="#666" rx="2"/>
+    <text x="45" y="242" font-family="Arial, sans-serif" font-size="12" fill="#007bff">BGE M3-Embedding: Multi-Lingual, Multi-Functionality, Multi-Granularity</text>
+    
+    <!-- 8. GPL -->
+    <rect x="20" y="260" width="16" height="16" fill="#666" rx="2"/>
+    <text x="45" y="272" font-family="Arial, sans-serif" font-size="12" fill="#007bff">GPL: Generative Pseudo Labeling for Unsupervised Domain Adaptation</text>
+    
+    <!-- 9. Improving Text Embeddings -->
+    <rect x="20" y="290" width="16" height="16" fill="#666" rx="2"/>
+    <text x="45" y="302" font-family="Arial, sans-serif" font-size="12" fill="#007bff">Improving Text Embeddings with Large Language Models</text>
+  </g>
+  
+  <!-- 설명 텍스트 -->
+  <text x="20" y="330" font-family="Arial, sans-serif" font-size="10" fill="#666">✓ 완료된 논문 (취소선)</text>
+  <text x="20" y="345" font-family="Arial, sans-serif" font-size="10" fill="#666">☐ 리뷰 예정 논문</text>
+</svg>

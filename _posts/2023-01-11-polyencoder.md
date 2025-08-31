@@ -3,9 +3,10 @@ layout: post
 title: Poly-encoders ◀️ Transformer Architectures and Pre-training Strategies for Fast and Accurate Multi-sentence Scoring
 subtitle: Efficiently Learning an Encoder that Classifies Token Replacements Accurately
 style: border
-color: danger
+color: primary
 tags: [sentence embedding, poly-encoder, review]
 description: cross-encoder와 bi-encoder 그 사이 어딘가....
+image: /assets/images/poly.png
 ---
 
 {% capture list_items %}

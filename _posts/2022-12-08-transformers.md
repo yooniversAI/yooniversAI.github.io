@@ -3,9 +3,10 @@ layout: post
 title: Transformer ◀️ Attention is all you need 
 subtitle: transformer, bidirectional RNN은 필요없다.
 style: border
-color: danger
+color: primary
 tags: [transformer, review]
 description: 이번 포스팅은 최근 2년간의 NLP task에서 SOTA를 기록했던 모델들의 모태가 되는 Transformer(NIPS 2017)에 대한 논문을 리뷰하려 한다.
+image: https://user-images.githubusercontent.com/120036648/206434262-eede90f6-3307-4eee-9bfa-30dc28c92168.png
 ---
 
 <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script> 

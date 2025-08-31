@@ -1,0 +1,41 @@
+html {
+  padding-left: calc(100vw - 100%);
+}
+
+body {
+  font-family:'GmarketSans', sans-serif;
+  line-height: 1.7;
+  font-size: 18px;
+  font-weight: 350;
+}
+
+.badge {
+  font-weight: 500;
+}
+
+.bg-light,
+.badge-light {
+  &,
+  * {
+    color: $text-black !important;
+  }
+}
+
+.bg-dark,
+.badge-dark {
+  &,
+  * {
+    color: $text-white !important;
+  }
+}
+
+/* Purple badge 스타일 */
+.badge-purple {
+  background-color: #be55f2 !important;
+  color: white !important;
+}
+
+.badge-purple:hover {
+  background-color: #a03dd8 !important;
+  color: white !important;
+}

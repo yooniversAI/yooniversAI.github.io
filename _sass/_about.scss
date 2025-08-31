@@ -1,0 +1,479 @@
+.about-hero {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 2.5rem 0;
+  margin-bottom: 2rem;
+  border-radius: 0 0 2rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 연한 무지개빛 그라데이션 오버레이 */
+.about-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 182, 193, 0.05) 0%,
+    rgba(255, 218, 185, 0.05) 16.66%,
+    rgba(255, 255, 224, 0.05) 33.33%,
+    rgba(173, 216, 230, 0.05) 50%,
+    rgba(221, 160, 221, 0.05) 66.66%,
+    rgba(255, 182, 193, 0.05) 83.33%,
+    rgba(255, 218, 185, 0.05) 100%
+  );
+  z-index: 1;
+}
+
+.skill-card {
+  background: white;
+  border-radius: 1rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.skill-progress {
+  height: 12px;
+  border-radius: 6px;
+  background: #f8f9fa;
+  overflow: hidden;
+  margin-top: 0.5rem;
+}
+
+.skill-progress-bar {
+  height: 100%;
+  border-radius: 6px;
+  transition: width 1.5s ease;
+}
+
+.timeline-card {
+  background: white;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e9ecef;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  
+  /* 무지개빛 그라데이션 배경 */
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      135deg,
+      rgba(255, 182, 193, 0.6) 0%,
+      rgba(255, 218, 185, 0.6) 16.66%,
+      rgba(255, 255, 224, 0.6) 33.33%,
+      rgba(173, 216, 230, 0.6) 50%,
+      rgba(221, 160, 221, 0.6) 66.66%,
+      rgba(255, 182, 193, 0.6) 83.33%,
+      rgba(255, 218, 185, 0.6) 100%
+    );
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: 1;
+    background-size: 200% 200%;
+  }
+  
+  &:hover {
+    transform: translateY(-8px) scale(1.02);
+    
+    &::before {
+      opacity: 1;
+      animation: rainbow-flow 4s ease-in-out infinite;
+    }
+  }
+}
+
+.timeline-date {
+  color: #667eea;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.timeline-title {
+  color: #2c3e50;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  position: relative;
+  padding: 0.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  z-index: 2;
+}
+
+.timeline-position {
+  font-size: 1rem;
+  color: #6c757d;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  z-index: 2;
+}
+
+.timeline-company {
+  font-size: 1.5rem;
+  color: #2c3e50;
+  font-weight: 800;
+  text-shadow: none;
+  z-index: 2;
+}
+
+.timeline-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  z-index: 2;
+}
+
+.timeline-location {
+  font-size: 0.9rem;
+  color: #95a5a6;
+  font-weight: 500;
+  font-style: italic;
+  z-index: 2;
+}
+
+.timeline-content {
+  color: #555;
+  line-height: 1.6;
+  position: relative;
+  z-index: 2;
+}
+
+.section-title {
+  color: #2c3e50;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-align: center;
+  position: relative;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    border-radius: 2px;
+  }
+}
+
+.profile-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 2;
+}
+
+/* about-hero 내부 콘텐츠가 그라데이션 위에 보이도록 */
+.about-hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* 커스텀 링크 스타일 - 파란색 글씨에 흰색 테두리 */
+.about-hero .custom-link {
+  color: #007bff;
+  font-weight: 600;
+  text-decoration: none;
+  text-shadow: 
+    -1px -1px 0 #fff,
+     1px -1px 0 #fff,
+    -1px  1px 0 #fff,
+     1px  1px 0 #fff;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    color: #0056b3;
+    text-shadow: 
+      -1px -1px 0 #fff,
+       1px -1px 0 #fff,
+      -1px  1px 0 #fff,
+       1px  1px 0 #fff;
+  }
+}
+
+.skills-container {
+  margin-bottom: 3rem;
+}
+
+.skill-category {
+  margin-bottom: 1.5rem;
+  
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.skill-category {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.skill-category-title {
+  color: #007bff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  min-width: 200px;
+  flex-shrink: 0;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  flex: 1;
+}
+
+.skill-tag {
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: transparent;
+  color: #667eea;
+  border: 1px solid #667eea;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    background: #667eea;
+    color: white;
+  }
+}
+
+/* 카테고리별 색상 구분 */
+.skill-category:nth-child(1) .skill-tag {
+  border-color: #be55f2;
+  color: #be55f2;
+  
+  &:hover {
+    background: #be55f2;
+    color: white;
+  }
+}
+
+.skill-category:nth-child(2) .skill-tag {
+  border-color: #28a745;
+  color: #28a745;
+  
+  &:hover {
+    background: #28a745;
+    color: white;
+  }
+}
+
+.skill-category:nth-child(3) .skill-tag {
+  border-color: #fd7e14;
+  color: #fd7e14;
+  
+  &:hover {
+    background: #fd7e14;
+    color: white;
+  }
+}
+
+.skill-category:nth-child(4) .skill-tag {
+  border-color: #17a2b8;
+  color: #17a2b8;
+  
+  &:hover {
+    background: #17a2b8;
+    color: white;
+  }
+}
+
+@media (max-width: 768px) {
+  .skill-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .about-hero {
+    padding: 1.5rem 0;
+    margin-bottom: 1.5rem;
+  }
+}
+
+// 다크모드 스타일
+[data-theme="dark"] {
+  .about-hero {
+    background: linear-gradient(135deg, #4a5f8f 0%, #6b5b95 50%, #c0392b 100%);
+  }
+  
+  .skill-category-title {
+    color: #007bff;
+  }
+  
+  .skill-category {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .skill-tag {
+    background: transparent;
+    
+    &:hover {
+      color: white;
+    }
+  }
+  
+  /* 다크모드에서도 카테고리별 색상 유지 */
+  .skill-category:nth-child(1) .skill-tag {
+    border-color: #be55f2;
+    color: #be55f2;
+    
+    &:hover {
+      background: #be55f2;
+      color: white;
+    }
+  }
+  
+  .skill-category:nth-child(2) .skill-tag {
+    border-color: #28a745;
+    color: #28a745;
+    
+    &:hover {
+      background: #28a745;
+      color: white;
+    }
+  }
+  
+  .skill-category:nth-child(3) .skill-tag {
+    border-color: #fd7e14;
+    color: #fd7e14;
+    
+    &:hover {
+      background: #fd7e14;
+      color: white;
+    }
+  }
+  
+  .skill-category:nth-child(4) .skill-tag {
+    border-color: #17a2b8;
+    color: #17a2b8;
+    
+    &:hover {
+      background: #17a2b8;
+      color: white;
+    }
+  }
+  
+  .timeline-card {
+    background-color: transparent;
+    color: rgba(white, 0.9);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    border: none;
+    
+    /* 다크모드에서도 동일한 무지개빛 그라데이션 배경 */
+    &::before {
+      background: linear-gradient(
+        135deg,
+        rgba(255, 182, 193, 0.6) 0%,
+        rgba(255, 218, 185, 0.6) 16.66%,
+        rgba(255, 255, 224, 0.6) 33.33%,
+        rgba(173, 216, 230, 0.6) 50%,
+        rgba(221, 160, 221, 0.6) 66.66%,
+        rgba(255, 182, 193, 0.6) 83.33%,
+        rgba(255, 218, 185, 0.6) 100%
+      );
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      z-index: 1;
+      background-size: 200% 200%;
+    }
+    
+    &:hover {
+      transform: translateY(-8px) scale(1.02);
+      
+      &::before {
+        opacity: 1;
+        animation: rainbow-flow 4s ease-in-out infinite;
+      }
+    }
+  }
+  
+  .timeline-date {
+    color: #667eea;
+  }
+  
+  .timeline-title {
+    color: rgba(white, 0.9);
+  }
+  
+  .timeline-position {
+    color: rgba(white, 0.7);
+  }
+  
+  .timeline-company {
+    color: rgba(white, 0.9);
+    text-shadow: none;
+  }
+  
+  .timeline-location {
+    color: rgba(white, 0.6);
+  }
+  
+  .timeline-content {
+    color: rgba(white, 0.7);
+  }
+  
+  .section-title {
+    color: rgba(white, 0.9);
+    
+    &::after {
+      background: linear-gradient(90deg, #667eea, #764ba2);
+    }
+  }
+  
+  .profile-image {
+    border-color: #2c3032;
+  }
+}
+
+/* 무지개빛 흐름 애니메이션 - 부드러운 그라데이션 이동 */
+@keyframes rainbow-flow {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}

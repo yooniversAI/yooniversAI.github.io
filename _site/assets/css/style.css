@@ -1,93 +1,20 @@
 @charset "UTF-8";
 @import url("https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSans.css");
-.cls-1 { fill: #ffc541; }
+.error-page { text-align: center; padding: 4rem 0; min-height: 60vh; display: flex; align-items: center; justify-content: center; }
 
-.cls-2 { fill: #4e4066; }
+.error-code { font-size: 8rem; font-weight: bold; color: #667eea; margin-bottom: 1rem; line-height: 1; }
 
-.cls-3 { fill: #6f5b92; }
+.error-message { font-size: 1.5rem; color: #6c757d; margin-bottom: 2rem; }
 
-.cls-4 { fill: #f78d5e; }
+.error-description { font-size: 1.1rem; color: #6c757d; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto; }
 
-.cls-5 { fill: #fa976c; }
+.error-actions { margin-top: 2rem; }
 
-.cls-6 { fill: #b65c32; opacity: 0.6; }
+.error-actions .btn { margin: 0 0.5rem; }
 
-.cls-7 { fill: #b65c32; opacity: 0.4; }
+[data-theme="dark"] .error-code { color: #4a5f8f; }
+[data-theme="dark"] .error-message, [data-theme="dark"] .error-description { color: rgba(255, 255, 255, 0.7); }
 
-.cls-8 { fill: #b65c32; }
-
-.cls-9 { fill: #f4b73b; }
-
-.cls-10 { opacity: 0.6; }
-
-.cls-11 { fill: #f9c358; }
-
-.cls-12 { fill: #9b462c; }
-
-.cls-13 { fill: #aa512e; }
-
-.cls-14 { fill: #7d6aa5; }
-
-/* animations */
-.wheel { animation: wheel-rotate 6s ease infinite; transform-origin: center; transform-box: fill-box; }
-
-@keyframes wheel-rotate { 50% { transform: rotate(360deg); animation-timing-function: cubic-bezier(0.55, 0.085, 0.68, 0.53); }
-  100% { transform: rotate(960deg); } }
-.clock-hand-1 { animation: clock-rotate 3s linear infinite; transform-origin: bottom; transform-box: fill-box; }
-
-.clock-hand-2 { animation: clock-rotate 6s linear infinite; transform-origin: bottom; transform-box: fill-box; }
-
-@keyframes clock-rotate { 100% { transform: rotate(360deg); } }
-#box-top { animation: box-top-anim 2s linear infinite; transform-origin: right top; transform-box: fill-box; }
-
-@keyframes box-top-anim { 50% { transform: rotate(-5deg); } }
-#umbrella { animation: umbrella-anim 6s linear infinite; transform-origin: center; transform-box: fill-box; }
-
-@keyframes umbrella-anim { 25% { transform: translateY(10px) rotate(5deg); }
-  75% { transform: rotate(-5deg); } }
-#cup { animation: cup-rotate 3s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite; transform-origin: top left; transform-box: fill-box; }
-
-@keyframes cup-rotate { 50% { transform: rotate(-5deg); } }
-#pillow { animation: pillow-anim 3s linear infinite; transform-origin: center; transform-box: fill-box; }
-
-@keyframes pillow-anim { 25% { transform: rotate(10deg) translateY(5px); }
-  75% { transform: rotate(-10deg); } }
-#stripe { animation: stripe-anim 3s linear infinite; transform-origin: center; transform-box: fill-box; }
-
-@keyframes stripe-anim { 25% { transform: translate(10px, 0) rotate(-10deg); }
-  75% { transform: translateX(10px); } }
-#bike { animation: bike-anim 6s ease infinite; }
-
-@keyframes bike-anim { 0% { transform: translateX(-1300px); }
-  50% { transform: translateX(0); animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715); }
-  100% { transform: translateX(1300px); } }
-#rucksack { animation: ruck-anim 3s linear infinite; transform-origin: top; transform-box: fill-box; }
-
-@keyframes ruck-anim { 50% { transform: rotate(5deg); } }
-.circle { animation: circle-anim ease infinite; transform-origin: center; transform-box: fill-box; perspective: 0px; }
-
-.circle.c1 { animation-duration: 2s; }
-
-.circle.c2 { animation-duration: 3s; }
-
-.circle.c3 { animation-duration: 1s; }
-
-.circle.c4 { animation-duration: 1s; }
-
-.circle.c5 { animation-duration: 2s; }
-
-.circle.c6 { animation-duration: 3s; }
-
-@keyframes circle-anim { 50% { transform: scale(0.2) rotateX(360deg) rotateY(360deg); } }
-.four, #ou { animation: four-anim cubic-bezier(0.39, 0.575, 0.565, 1) infinite; }
-
-.four.a { transform-origin: bottom left; animation-duration: 3s; transform-box: fill-box; }
-
-.four.b { transform-origin: bottom right; animation-duration: 3s; transform-box: fill-box; }
-
-#ou { animation-duration: 6s; transform-origin: center; transform-box: fill-box; }
-
-@keyframes four-anim { 50% { transform: scale(0.98); } }
 html { padding-left: calc(100vw - 100%); }
 
 body { font-family: 'GmarketSans', sans-serif; line-height: 1.7; font-size: 18px; font-weight: 350; }
@@ -98,18 +25,23 @@ body { font-family: 'GmarketSans', sans-serif; line-height: 1.7; font-size: 18px
 
 .bg-dark, .bg-dark *, .badge-dark, .badge-dark * { color: rgba(255, 255, 255, 0.9) !important; }
 
+/* Purple badge 스타일 */
+.badge-purple { background-color: #be55f2 !important; color: white !important; }
+
+.badge-purple:hover { background-color: #a03dd8 !important; color: white !important; }
+
 .search-box { box-shadow: none !important; }
 
-.post.card { border-radius: 15px; text-decoration: none !important; padding: 15px; height: 100%; transition: all 0.5s ease; cursor: pointer; position: relative; overflow: hidden; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); border: 1px solid rgba(220, 53, 69, 0.2); /* 애니메이션 충돌 방지 */ animation: none !important; animation-delay: 0s !important; /* WOW.js 애니메이션 비활성화 */ opacity: 1 !important; transform: none !important; }
-
-/* WOW.js 애니메이션 완전 비활성화 */
-.wow.animated.fadeIn { animation: none !important; opacity: 1 !important; transform: none !important; }
+.post.card { border-radius: 15px; text-decoration: none !important; padding: 10px; height: 220px; /* 이미지 높이에 맞춰 조정 */ margin-bottom: 12px; /* 적절한 마진 추가 */ transition: all 0.3s ease; cursor: pointer; position: relative; overflow: hidden; background: transparent; border: none !important; border-width: 0 !important; border-style: none !important; border-color: transparent !important; }
 
 /* 다크모드에서 카드 배경색 변경 */
-[data-theme="dark"] .post.card { background: linear-gradient(135deg, #1e1f20 0%, #1e1f20 100%); border: 1px solid rgba(220, 53, 69, 0.3); }
+[data-theme="dark"] .post.card { background: transparent; border: 1px solid rgba(220, 53, 69, 0.3); }
 
 /* 무지개빛 그라데이션 배경 */
 .post.card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, rgba(255, 182, 193, 0.6) 0%, rgba(255, 218, 185, 0.6) 16.66%, rgba(255, 255, 224, 0.6) 33.33%, rgba(173, 216, 230, 0.6) 50%, rgba(221, 160, 221, 0.6) 66.66%, rgba(255, 182, 193, 0.6) 83.33%, rgba(255, 218, 185, 0.6) 100%); opacity: 0; transition: opacity 0.5s ease; z-index: 1; background-size: 200% 200%; }
+
+/* 다크모드에서 더 어두운 무지개빛 그라데이션 배경 */
+[data-theme="dark"] .post.card::before { background: linear-gradient(135deg, rgba(255, 182, 193, 0.6) 0%, rgba(255, 218, 185, 0.6) 16.66%, rgba(255, 255, 224, 0.6) 33.33%, rgba(173, 216, 230, 0.6) 50%, rgba(221, 160, 221, 0.6) 66.66%, rgba(255, 182, 193, 0.6) 83.33%, rgba(255, 218, 185, 0.6) 100%); opacity: 0; transition: opacity 0.5s ease; z-index: 1; background-size: 200% 200%; }
 
 /* 호버 시 무지개빛 효과 활성화 */
 .post.card:hover::before { opacity: 1; animation: rainbow-flow 4s ease-in-out infinite; }
@@ -121,9 +53,189 @@ body { font-family: 'GmarketSans', sans-serif; line-height: 1.7; font-size: 18px
 /* 카드 내용을 무지개빛 효과 위에 표시 */
 .post.card .card-body, .post.card .card-footer { position: relative; z-index: 2; }
 
-.post.card:hover { transform: translateY(-8px); box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1), 0 5px 15px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.1); border-color: rgba(220, 53, 69, 0.4); }
+.post.card:hover { transform: translateY(-8px) scale(1.02); background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1), 0 5px 15px rgba(0, 0, 0, 0.08); }
 
-.post.card:hover .card-title { color: #dc3545 !important; text-shadow: 0 0 10px rgba(220, 53, 69, 0.3); }
+/* 각 포스트의 고유 색상에 따른 hover 테두리 */
+.post.card.border-primary:hover { border: 1px solid #007bff !important; }
+
+.post.card.border-secondary:hover { border: 1px solid #6c757d !important; }
+
+.post.card.border-success:hover { border: 1px solid #28a745 !important; }
+
+.post.card.border-danger:hover { border: 1px solid #dc3545 !important; }
+
+.post.card.border-warning:hover { border: 1px solid #ffc107 !important; }
+
+.post.card.border-info:hover { border: 1px solid #17a2b8 !important; }
+
+.post.card.border-purple:hover { border: 1px solid #be55f2 !important; }
+
+.post.card.border-light:hover { border: 1px solid #f8f9fa !important; }
+
+.post.card.border-dark:hover { border: 1px solid #343a40 !important; }
+
+/* fill 스타일의 경우도 동일하게 적용 */
+.post.card.bg-primary:hover { border: 1px solid #007bff !important; }
+
+.post.card.bg-secondary:hover { border: 1px solid #6c757d !important; }
+
+.post.card.bg-success:hover { border: 1px solid #28a745 !important; }
+
+.post.card.bg-danger:hover { border: 1px solid #dc3545 !important; }
+
+.post.card.bg-warning:hover { border: 1px solid #ffc107 !important; }
+
+.post.card.bg-info:hover { border: 1px solid #17a2b8 !important; }
+
+.post.card.bg-purple:hover { border: 1px solid #be55f2 !important; }
+
+.post.card.bg-light:hover { border: 1px solid #f8f9fa !important; }
+
+.post.card.bg-dark:hover { border: 1px solid #343a40 !important; }
+
+/* 각 카드의 고유 색상에 따른 hover 제목 색상 */
+.post.card:hover .card-title { transition: color 0.3s ease; }
+
+/* Primary 색상 카드 */
+.post.card.border-primary:hover .card-title, .post.card.bg-primary:hover .card-title { color: #007bff !important; text-shadow: 0 0 10px rgba(0, 123, 255, 0.3); }
+
+/* Secondary 색상 카드 */
+.post.card.border-secondary:hover .card-title, .post.card.bg-secondary:hover .card-title { color: #6c757d !important; text-shadow: 0 0 10px rgba(108, 117, 125, 0.3); }
+
+/* Success 색상 카드 */
+.post.card.border-success:hover .card-title, .post.card.bg-success:hover .card-title { color: #28a745 !important; text-shadow: 0 0 10px rgba(40, 167, 69, 0.3); }
+
+/* Danger 색상 카드 */
+.post.card.border-danger:hover .card-title, .post.card.bg-danger:hover .card-title { color: #dc3545 !important; text-shadow: 0 0 10px rgba(220, 53, 69, 0.3); }
+
+/* Warning 색상 카드 */
+.post.card.border-warning:hover .card-title, .post.card.bg-warning:hover .card-title { color: #ffc107 !important; text-shadow: 0 0 10px rgba(255, 193, 7, 0.3); }
+
+/* Info 색상 카드 */
+.post.card.border-info:hover .card-title, .post.card.bg-info:hover .card-title { color: #17a2b8 !important; text-shadow: 0 0 10px rgba(23, 162, 184, 0.3); }
+
+/* Purple 색상 카드 */
+.post.card.border-purple:hover .card-title, .post.card.bg-purple:hover .card-title { color: #be55f2 !important; text-shadow: 0 0 10px rgba(190, 85, 242, 0.3); }
+
+/* Light 색상 카드 */
+.post.card.border-light:hover .card-title, .post.card.bg-light:hover .card-title { color: #f8f9fa !important; text-shadow: 0 0 10px rgba(248, 249, 250, 0.3); }
+
+/* Dark 색상 카드 */
+.post.card.border-dark:hover .card-title, .post.card.bg-dark:hover .card-title { color: #343a40 !important; text-shadow: 0 0 10px rgba(52, 58, 64, 0.3); }
+
+/* Bootstrap 기본 카드 스타일 덮어쓰기 */
+.post.card, .post.card:hover { border: none !important; border-width: 0 !important; border-style: none !important; border-color: transparent !important; outline: none !important; }
+
+/* 다크모드에서 hover 시에만 배경색 표시 */
+[data-theme="dark"] .post.card:hover { background: linear-gradient(135deg, #1e1f20 0%, #1e1f20 100%); border: 1px solid rgba(220, 53, 69, 0.5); }
+
+/* Description 텍스트 기본 스타일 */
+.post.card .card-text { transition: all 0.3s ease; }
+
+/* 카드 좌측에 컬러 띠 추가 */
+.post.card { position: relative; }
+
+.post.card::after { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; transition: all 0.3s ease; }
+
+/* Primary 색상 카드의 좌측 띠 */
+.post.card.border-primary::after, .post.card.bg-primary::after { background: #007bff; }
+
+/* Secondary 색상 카드의 좌측 띠 */
+.post.card.border-secondary::after, .post.card.bg-secondary::after { background: #6c757d; }
+
+/* Success 색상 카드의 좌측 띠 */
+.post.card.border-success::after, .post.card.bg-success::after { background: #28a745; }
+
+/* Danger 색상 카드의 좌측 띠 */
+.post.card.border-danger::after, .post.card.bg-danger::after { background: #dc3545; }
+
+/* Warning 색상 카드의 좌측 띠 */
+.post.card.border-warning::after, .post.card.bg-warning::after { background: #ffc107; }
+
+/* Info 색상 카드의 좌측 띠 */
+.post.card.border-info::after, .post.card.bg-info::after { background: #17a2b8; }
+
+/* Purple 색상 카드의 좌측 띠 */
+.post.card.border-purple::after, .post.card.bg-purple::after { background: #be55f2; }
+
+/* Light 색상 카드의 좌측 띠 */
+.post.card.border-light::after, .post.card.bg-light::after { background: #f8f9fa; }
+
+/* Dark 색상 카드의 좌측 띠 */
+.post.card.border-dark::after, .post.card.bg-dark::after { background: #343a40; }
+
+/* Hover 시 띠 효과 강화 */
+.post.card:hover::after { width: 6px; box-shadow: 0 0 10px currentColor; }
+
+/* Hover 시에만 컬러 테두리 효과 적용 */
+.post.card.border-primary:hover .card-text, .post.card.bg-primary:hover .card-text { text-shadow: -0.5px -0.5px 0 #007bff, 0.5px -0.5px 0 #007bff, -0.5px 0.5px 0 #007bff, 0.5px 0.5px 0 #007bff; }
+
+.post.card.border-secondary:hover .card-text, .post.card.bg-secondary:hover .card-text { text-shadow: -0.5px -0.5px 0 #6c757d, 0.5px -0.5px 0 #6c757d, -0.5px 0.5px 0 #6c757d, 0.5px 0.5px 0 #6c757d; }
+
+.post.card.border-success:hover .card-text, .post.card.bg-success:hover .card-text { text-shadow: -0.5px -0.5px 0 #28a745, 0.5px -0.5px 0 #28a745, -0.5px 0.5px 0 #28a745, 0.5px 0.5px 0 #28a745; }
+
+.post.card.border-danger:hover .card-text, .post.card.bg-danger:hover .card-text { text-shadow: -0.5px -0.5px 0 #dc3545, 0.5px -0.5px 0 #dc3545, -0.5px 0.5px 0 #dc3545, 0.5px 0.5px 0 #dc3545; }
+
+.post.card.border-warning:hover .card-text, .post.card.bg-warning:hover .card-text { text-shadow: -0.5px -0.5px 0 #ffc107, 0.5px -0.5px 0 #ffc107, -0.5px 0.5px 0 #ffc107, 0.5px 0.5px 0 #ffc107; }
+
+.post.card.border-info:hover .card-text, .post.card.bg-info:hover .card-text { text-shadow: -0.5px -0.5px 0 #17a2b8, 0.5px -0.5px 0 #17a2b8, -0.5px 0.5px 0 #17a2b8, 0.5px 0.5px 0 #17a2b8; }
+
+.post.card.border-purple:hover .card-text, .post.card.bg-purple:hover .card-text { text-shadow: -0.5px -0.5px 0 #be55f2, 0.5px -0.5px 0 #be55f2, -0.5px 0.5px 0 #be55f2, 0.5px 0.5px 0 #be55f2; }
+
+.post.card.border-light:hover .card-text, .post.card.bg-light:hover .card-text { text-shadow: -0.5px -0.5px 0 #f8f9fa, 0.5px -0.5px 0 #f8f9fa, -0.5px 0.5px 0 #f8f9fa, 0.5px 0.5px 0 #f8f9fa; }
+
+.post.card.border-dark:hover .card-text, .post.card.bg-dark:hover .card-text { text-shadow: -0.5px -0.5px 0 #343a40, 0.5px -0.5px 0 #343a40, -0.5px 0.5px 0 #343a40, 0.5px 0.5px 0 #343a40; }
+
+/* 라이트모드에서 hover 시 테두리 두께를 절반으로 줄임 */
+.post.card.border-primary:hover .card-text, .post.card.bg-primary:hover .card-text { text-shadow: -0.25px -0.25px 0 #007bff, 0.25px -0.25px 0 #007bff, -0.25px 0.25px 0 #007bff, 0.25px 0.25px 0 #007bff; }
+
+.post.card.border-secondary:hover .card-text, .post.card.bg-secondary:hover .card-text { text-shadow: -0.25px -0.25px 0 #6c757d, 0.25px -0.25px 0 #6c757d, -0.25px 0.25px 0 #6c757d, 0.25px 0.25px 0 #6c757d; }
+
+.post.card.border-success:hover .card-text, .post.card.bg-success:hover .card-text { text-shadow: -0.25px -0.25px 0 #28a745, 0.25px -0.25px 0 #28a745, -0.25px 0.25px 0 #28a745, 0.25px 0.25px 0 #28a745; }
+
+.post.card.border-danger:hover .card-text, .post.card.bg-danger:hover .card-text { text-shadow: -0.25px -0.25px 0 #dc3545, 0.25px -0.25px 0 #dc3545, -0.25px 0.25px 0 #dc3545, 0.25px 0.25px 0 #dc3545; }
+
+.post.card.border-warning:hover .card-text, .post.card.bg-warning:hover .card-text { text-shadow: -0.25px -0.25px 0 #ffc107, 0.25px -0.25px 0 #ffc107, -0.25px 0.25px 0 #ffc107, 0.25px 0.25px 0 #ffc107; }
+
+.post.card.border-info:hover .card-text, .post.card.bg-info:hover .card-text { text-shadow: -0.25px -0.25px 0 #17a2b8, 0.25px -0.25px 0 #17a2b8, -0.25px 0.25px 0 #17a2b8, 0.25px 0.25px 0 #17a2b8; }
+
+.post.card.border-purple:hover .card-text, .post.card.bg-purple:hover .card-text { text-shadow: -0.25px -0.25px 0 #be55f2, 0.25px -0.25px 0 #be55f2, -0.25px 0.25px 0 #be55f2, 0.25px 0.25px 0 #be55f2; }
+
+.post.card.border-light:hover .card-text, .post.card.bg-light:hover .card-text { text-shadow: -0.25px -0.25px 0 #f8f9fa, 0.25px -0.25px 0 #f8f9fa, -0.25px 0.25px 0 #f8f9fa, 0.25px 0.25px 0 #f8f9fa; }
+
+.post.card.border-dark:hover .card-text, .post.card.bg-dark:hover .card-text { text-shadow: -0.25px -0.25px 0 #343a40, 0.25px -0.25px 0 #343a40, -0.25px 0.25px 0 #343a40, 0.25px 0.25px 0 #343a40; }
+
+/* 다크모드에서는 원래 두께 유지 */
+[data-theme="dark"] .post.card.border-primary:hover .card-text, [data-theme="dark"] .post.card.bg-primary:hover .card-text { text-shadow: -0.5px -0.5px 0 #007bff, 0.5px -0.5px 0 #007bff, -0.5px 0.5px 0 #007bff, 0.5px 0.5px 0 #007bff; }
+
+[data-theme="dark"] .post.card.border-secondary:hover .card-text, [data-theme="dark"] .post.card.bg-secondary:hover .card-text { text-shadow: -0.5px -0.5px 0 #6c757d, 0.5px -0.5px 0 #6c757d, -0.5px 0.5px 0 #6c757d, 0.5px 0.5px 0 #6c757d; }
+
+[data-theme="dark"] .post.card.border-success:hover .card-text, [data-theme="dark"] .post.card.bg-success:hover .card-text { text-shadow: -0.5px -0.5px 0 #28a745, 0.5px -0.5px 0 #28a745, -0.5px 0.5px 0 #28a745, 0.5px 0.5px 0 #28a745; }
+
+[data-theme="dark"] .post.card.border-danger:hover .card-text, [data-theme="dark"] .post.card.bg-danger:hover .card-text { text-shadow: -0.5px -0.5px 0 #dc3545, 0.5px -0.5px 0 #dc3545, -0.5px 0.5px 0 #dc3545, 0.5px 0.5px 0 #dc3545; }
+
+[data-theme="dark"] .post.card.border-warning:hover .card-text, [data-theme="dark"] .post.card.bg-warning:hover .card-text { text-shadow: -0.5px -0.5px 0 #ffc107, 0.5px -0.5px 0 #ffc107, -0.5px 0.5px 0 #ffc107, 0.5px 0.5px 0 #ffc107; }
+
+[data-theme="dark"] .post.card.border-info:hover .card-text, [data-theme="dark"] .post.card.bg-info:hover .card-text { text-shadow: -0.5px -0.5px 0 #17a2b8, 0.5px -0.5px 0 #17a2b8, -0.5px 0.5px 0 #17a2b8, 0.5px 0.5px 0 #17a2b8; }
+
+[data-theme="dark"] .post.card.border-purple:hover .card-text, [data-theme="dark"] .post.card.bg-purple:hover .card-text { text-shadow: -0.5px -0.5px 0 #be55f2, 0.5px -0.5px 0 #be55f2, -0.5px 0.5px 0 #be55f2, 0.5px 0.5px 0 #be55f2; }
+
+[data-theme="dark"] .post.card.border-light:hover .card-text, [data-theme="dark"] .post.card.bg-light:hover .card-text { text-shadow: -0.5px -0.5px 0 #f8f9fa, 0.5px -0.5px 0 #f8f9fa, -0.5px 0.5px 0 #f8f9fa, 0.5px 0.5px 0 #f8f9fa; }
+
+[data-theme="dark"] .post.card.border-dark:hover .card-text, [data-theme="dark"] .post.card.bg-dark:hover .card-text { text-shadow: -0.5px -0.5px 0 #343a40, 0.5px -0.5px 0 #343a40, -0.5px 0.5px 0 #343a40, 0.5px 0.5px 0 #343a40; }
+
+/* 포스트 이미지 스타일 */
+.post-image-container { height: 180px; /* 정사각형에 가깝게 높이 증가 */ width: 100%; display: flex; align-items: center; justify-content: center; background: #f8f9fa; border-radius: 15px 0 0 15px; overflow: hidden; }
+
+/* 다크모드에서 이미지 컨테이너 배경색 */
+[data-theme="dark"] .post-image-container { background: #2d3748; }
+
+.post-image { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease; }
+
+.post-image-placeholder { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: #e9ecef; color: #6c757d; font-size: 2rem; }
+
+/* 호버 시 이미지 확대 효과 */
+.post.card:hover .post-image { transform: scale(1.05); }
 
 .post-metadata { font-size: 14px; margin-top: -6px; }
 .post-metadata .tag:hover { background-color: #007bff; color: white !important; }
@@ -484,3 +596,109 @@ body { font-family: 'GmarketSans', sans-serif; line-height: 1.7; font-size: 18px
 [data-theme="dark"] .list-group-item-action:hover, [data-theme="dark"] .list-group-item-action:focus { background-color: #1d1d1e; }
 [data-theme="dark"] .post footer { text-decoration: none; }
 [data-theme="dark"] .timeline-body .timeline-item:after { background-color: #17191a; }
+
+.about-hero { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 2.5rem 0; margin-bottom: 2rem; border-radius: 0 0 2rem 2rem; position: relative; overflow: hidden; }
+
+/* 연한 무지개빛 그라데이션 오버레이 */
+.about-hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, rgba(255, 182, 193, 0.05) 0%, rgba(255, 218, 185, 0.05) 16.66%, rgba(255, 255, 224, 0.05) 33.33%, rgba(173, 216, 230, 0.05) 50%, rgba(221, 160, 221, 0.05) 66.66%, rgba(255, 182, 193, 0.05) 83.33%, rgba(255, 218, 185, 0.05) 100%); z-index: 1; }
+
+.skill-card { background: white; border-radius: 1rem; padding: 1rem; margin-bottom: 1rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.skill-card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); }
+
+.skill-progress { height: 12px; border-radius: 6px; background: #f8f9fa; overflow: hidden; margin-top: 0.5rem; }
+
+.skill-progress-bar { height: 100%; border-radius: 6px; transition: width 1.5s ease; }
+
+.timeline-card { background: white; border-radius: 1rem; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); border: 1px solid #e9ecef; transition: all 0.3s ease; position: relative; overflow: hidden; /* 무지개빛 그라데이션 배경 */ }
+.timeline-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, rgba(255, 182, 193, 0.6) 0%, rgba(255, 218, 185, 0.6) 16.66%, rgba(255, 255, 224, 0.6) 33.33%, rgba(173, 216, 230, 0.6) 50%, rgba(221, 160, 221, 0.6) 66.66%, rgba(255, 182, 193, 0.6) 83.33%, rgba(255, 218, 185, 0.6) 100%); opacity: 0; transition: opacity 0.5s ease; z-index: 1; background-size: 200% 200%; }
+.timeline-card:hover { transform: translateY(-8px) scale(1.02); }
+.timeline-card:hover::before { opacity: 1; animation: rainbow-flow 4s ease-in-out infinite; }
+
+.timeline-date { color: #667eea; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.5rem; position: relative; z-index: 2; }
+
+.timeline-title { color: #2c3e50; font-weight: 700; margin-bottom: 1rem; font-size: 1.3rem; position: relative; padding: 0.5rem 0; display: flex; flex-direction: column; gap: 0.15rem; z-index: 2; }
+
+.timeline-position { font-size: 1rem; color: #6c757d; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; z-index: 2; }
+
+.timeline-company { font-size: 1.5rem; color: #2c3e50; font-weight: 800; text-shadow: none; z-index: 2; }
+
+.timeline-info { display: flex; align-items: center; gap: 0.5rem; z-index: 2; }
+
+.timeline-location { font-size: 0.9rem; color: #95a5a6; font-weight: 500; font-style: italic; z-index: 2; }
+
+.timeline-content { color: #555; line-height: 1.6; position: relative; z-index: 2; }
+
+.section-title { color: #2c3e50; font-weight: 700; margin-bottom: 2rem; text-align: center; position: relative; }
+.section-title::after { content: ''; position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); width: 60px; height: 3px; background: linear-gradient(90deg, #667eea, #764ba2); border-radius: 2px; }
+
+.profile-image { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 4px solid white; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); position: relative; z-index: 2; }
+
+/* about-hero 내부 콘텐츠가 그라데이션 위에 보이도록 */
+.about-hero .container { position: relative; z-index: 2; }
+
+/* 커스텀 링크 스타일 - 파란색 글씨에 흰색 테두리 */
+.about-hero .custom-link { color: #007bff; font-weight: 600; text-decoration: none; text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px  1px 0 #fff, 1px  1px 0 #fff; transition: all 0.3s ease; }
+.about-hero .custom-link:hover { color: #0056b3; text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px  1px 0 #fff, 1px  1px 0 #fff; }
+
+.skills-container { margin-bottom: 3rem; }
+
+.skill-category { margin-bottom: 1.5rem; }
+.skill-category:last-child { margin-bottom: 0; }
+
+.skill-category { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+.skill-category:last-child { margin-bottom: 0; }
+
+.skill-category-title { color: #007bff; font-size: 1.1rem; font-weight: 600; min-width: 200px; flex-shrink: 0; }
+
+.skill-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; flex: 1; }
+
+.skill-tag { padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.75rem; font-weight: 600; background: transparent; color: #667eea; border: 1px solid #667eea; transition: all 0.2s ease; }
+.skill-tag:hover { background: #667eea; color: white; }
+
+/* 카테고리별 색상 구분 */
+.skill-category:nth-child(1) .skill-tag { border-color: #be55f2; color: #be55f2; }
+.skill-category:nth-child(1) .skill-tag:hover { background: #be55f2; color: white; }
+
+.skill-category:nth-child(2) .skill-tag { border-color: #28a745; color: #28a745; }
+.skill-category:nth-child(2) .skill-tag:hover { background: #28a745; color: white; }
+
+.skill-category:nth-child(3) .skill-tag { border-color: #fd7e14; color: #fd7e14; }
+.skill-category:nth-child(3) .skill-tag:hover { background: #fd7e14; color: white; }
+
+.skill-category:nth-child(4) .skill-tag { border-color: #17a2b8; color: #17a2b8; }
+.skill-category:nth-child(4) .skill-tag:hover { background: #17a2b8; color: white; }
+
+@media (max-width: 768px) { .skill-grid { grid-template-columns: 1fr; }
+  .about-hero { padding: 1.5rem 0; margin-bottom: 1.5rem; } }
+[data-theme="dark"] { /* 다크모드에서도 카테고리별 색상 유지 */ }
+[data-theme="dark"] .about-hero { background: linear-gradient(135deg, #4a5f8f 0%, #6b5b95 50%, #c0392b 100%); }
+[data-theme="dark"] .skill-category-title { color: #007bff; }
+[data-theme="dark"] .skill-category { display: flex; align-items: center; gap: 1rem; }
+[data-theme="dark"] .skill-tag { background: transparent; }
+[data-theme="dark"] .skill-tag:hover { color: white; }
+[data-theme="dark"] .skill-category:nth-child(1) .skill-tag { border-color: #be55f2; color: #be55f2; }
+[data-theme="dark"] .skill-category:nth-child(1) .skill-tag:hover { background: #be55f2; color: white; }
+[data-theme="dark"] .skill-category:nth-child(2) .skill-tag { border-color: #28a745; color: #28a745; }
+[data-theme="dark"] .skill-category:nth-child(2) .skill-tag:hover { background: #28a745; color: white; }
+[data-theme="dark"] .skill-category:nth-child(3) .skill-tag { border-color: #fd7e14; color: #fd7e14; }
+[data-theme="dark"] .skill-category:nth-child(3) .skill-tag:hover { background: #fd7e14; color: white; }
+[data-theme="dark"] .skill-category:nth-child(4) .skill-tag { border-color: #17a2b8; color: #17a2b8; }
+[data-theme="dark"] .skill-category:nth-child(4) .skill-tag:hover { background: #17a2b8; color: white; }
+[data-theme="dark"] .timeline-card { background-color: transparent; color: rgba(255, 255, 255, 0.9); box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); border: none; /* 다크모드에서도 동일한 무지개빛 그라데이션 배경 */ }
+[data-theme="dark"] .timeline-card::before { background: linear-gradient(135deg, rgba(255, 182, 193, 0.6) 0%, rgba(255, 218, 185, 0.6) 16.66%, rgba(255, 255, 224, 0.6) 33.33%, rgba(173, 216, 230, 0.6) 50%, rgba(221, 160, 221, 0.6) 66.66%, rgba(255, 182, 193, 0.6) 83.33%, rgba(255, 218, 185, 0.6) 100%); opacity: 0; transition: opacity 0.5s ease; z-index: 1; background-size: 200% 200%; }
+[data-theme="dark"] .timeline-card:hover { transform: translateY(-8px) scale(1.02); }
+[data-theme="dark"] .timeline-card:hover::before { opacity: 1; animation: rainbow-flow 4s ease-in-out infinite; }
+[data-theme="dark"] .timeline-date { color: #667eea; }
+[data-theme="dark"] .timeline-title { color: rgba(255, 255, 255, 0.9); }
+[data-theme="dark"] .timeline-position { color: rgba(255, 255, 255, 0.7); }
+[data-theme="dark"] .timeline-company { color: rgba(255, 255, 255, 0.9); text-shadow: none; }
+[data-theme="dark"] .timeline-location { color: rgba(255, 255, 255, 0.6); }
+[data-theme="dark"] .timeline-content { color: rgba(255, 255, 255, 0.7); }
+[data-theme="dark"] .section-title { color: rgba(255, 255, 255, 0.9); }
+[data-theme="dark"] .section-title::after { background: linear-gradient(90deg, #667eea, #764ba2); }
+[data-theme="dark"] .profile-image { border-color: #2c3032; }
+
+/* 무지개빛 흐름 애니메이션 - 부드러운 그라데이션 이동 */
+@keyframes rainbow-flow { 0% { background-position: 0% 0%; }
+  50% { background-position: 100% 100%; }
+  100% { background-position: 0% 0%; } }

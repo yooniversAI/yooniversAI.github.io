@@ -2,9 +2,10 @@
 layout: post
 title: Attention ◀️ Neural Machine Translation by Jointly Learning to Align and Translate
 style: border
-color: danger
+color: primary
 tags: [Attention, review]
 description: 2015년 ICLR에서 등장한 논문으로써 처음 번역 분야에 Attention 개념을 사용한 논문으로 알려져있다. 딥린이의 필수 관문이라고 생각하기에 리뷰를 시작하려 한다.
+image: /assets/images/attn.png
 ---
 {% capture list_items %}
 1. Main contributions
